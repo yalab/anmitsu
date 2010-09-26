@@ -1,4 +1,8 @@
 Anmitsu::Application.routes.draw do
+  get "accounts/create"
+
+  get "accounts/destroy"
+
   resources :estimations
 
   get "root/index"
