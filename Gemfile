@@ -9,6 +9,7 @@ gem 'devise'
 group :development, :test do
   gem 'shoulda'
   gem 'factory_girl'
+  gem 'faker'
 end
 
 group :production do

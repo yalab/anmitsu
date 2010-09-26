@@ -5,3 +5,8 @@ require 'rails/test_help'
 class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
 end
+class ActionController::TestCase
+  include Devise::TestHelpers
+end
+Mongoid.master.collections.select{ |c| c.name !~ /system\./ }.each { |c| c.drop }
+
