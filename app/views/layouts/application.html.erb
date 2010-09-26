@@ -7,8 +7,15 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<%= notice %>
-<%= alert %>
+<ul>
+  <% if current_user %>
+    <li><%= link_to 'ログアウト', destroy_user_session_path %></li>
+  <% else %>
+    <li><%= link_to 'ログイン', new_user_session_path %></li>
+  <% end %>
+</ul>
+<% if notice %><div class="notice"><%= notice %></div><% end %>
+<% if alert %><div class="alert"><%= alert %></div><% end %>
 
 <%= yield %>
 
