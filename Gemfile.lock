@@ -83,6 +83,7 @@ GEM
       activesupport (= 3.0.0)
       bundler (~> 1.0.0)
       railties (= 3.0.0)
+    rails3-generators (0.13.0)
     railties (3.0.0)
       actionpack (= 3.0.0)
       activesupport (= 3.0.0)
@@ -111,5 +112,6 @@ DEPENDENCIES
   faker
   mongoid (= 2.0.0.beta.18)
   rails (= 3.0.0)
+  rails3-generators
   shoulda
   unicorn

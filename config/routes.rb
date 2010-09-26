@@ -1,4 +1,6 @@
 Anmitsu::Application.routes.draw do
+  resources :estimations
+
   get "root/index"
 
   root :to => "root#index"

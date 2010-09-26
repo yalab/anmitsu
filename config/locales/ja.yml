@@ -3,10 +3,16 @@
 # AR error messages are basically taken from Ruby-GetText-Package. Thanks to Masao Mutoh.
 
 ja:
+  Didn't receive confirmation instructions?: 確認メールが来ない場合
+  Forgot your password?: パスワードを忘れた場合
   email: &email
          メールアドレス
   password: &password
             パスワード
+  Remember me: &remember_me
+               ログインを記憶する
+  Sign in: ログイン
+  Sign up: 新規登録
   date:
     formats:
       default: "%Y/%m/%d"
@@ -114,6 +120,7 @@ ja:
       user:
         email: *email
         password: *password
+        remember_me: *remember_me
     errors:
       template:
         header:

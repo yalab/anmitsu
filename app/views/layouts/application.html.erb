@@ -11,7 +11,7 @@
   <% if current_user %>
     <li><%= link_to 'ログアウト', destroy_user_session_path %></li>
   <% else %>
-    <li><%= link_to 'ログイン', new_user_session_path %></li>
+    <li><%= link_to t('Sign in'), new_user_session_path %></li>
   <% end %>
 </ul>
 <% if notice %><div class="notice"><%= notice %></div><% end %>

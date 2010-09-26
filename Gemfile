@@ -10,6 +10,7 @@ group :development, :test do
   gem 'shoulda'
   gem 'factory_girl'
   gem 'faker'
+  gem 'rails3-generators'
 end
 
 group :production do
