@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @estimation.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @estimation.description %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @estimation.note %>
+</p>
+
+<p>
+  <b>Client name:</b>
+  <%= @estimation.client_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_estimation_path(@estimation) %> |
+<%= link_to 'Back', estimations_path %>
