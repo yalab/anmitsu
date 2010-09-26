@@ -1,6 +1,6 @@
-<h1>Editing estimation</h1>
+<h1><%= t 'Editing estimation' %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @estimation %> |
-<%= link_to 'Back', estimations_path %>
+<%= link_to t('Show'), @estimation %> |
+<%= link_to t('Back to list'), estimations_path %>

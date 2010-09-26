@@ -60,7 +60,7 @@ class EstimationsController < ApplicationController
 
     respond_to do |format|
       if @estimation.update_attributes(params[:estimation])
-        format.html { redirect_to(@estimation, :notice => 'Estimation was successfully updated.') }
+        format.html { redirect_to(@estimation, :notice => t('Estimation was successfully updated.')) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

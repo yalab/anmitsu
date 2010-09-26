@@ -9,13 +9,14 @@
 <body>
 <ul>
   <% if current_user %>
-    <li><%= link_to 'ログアウト', destroy_user_session_path %></li>
+    <li><%= link_to t('Sign out'), destroy_user_session_path %></li>
+    <li><%= link_to t('Listing estimations'), estimations_path %></li>
   <% else %>
     <li><%= link_to t('Sign in'), new_user_session_path %></li>
   <% end %>
 </ul>
-<% if notice %><div class="notice"><%= notice %></div><% end %>
-<% if alert %><div class="alert"><%= alert %></div><% end %>
+<% if notice %><div id="notice"><%= notice %></div><% end %>
+<% if alert %><div id="alert"><%= alert %></div><% end %>
 
 <%= yield %>
 

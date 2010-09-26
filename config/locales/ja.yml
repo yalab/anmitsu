@@ -3,16 +3,34 @@
 # AR error messages are basically taken from Ruby-GetText-Package. Thanks to Masao Mutoh.
 
 ja:
+  Back to list: 一覧に戻る
+  Client name: &client_name
+               顧客名
+  Description: &description
+               詳細
   Didn't receive confirmation instructions?: 確認メールが来ない場合
-  Forgot your password?: パスワードを忘れた場合
-  email: &email
+  Edit: 編集
+  Editing estimation: 見積り編集
+  Email: &email
          メールアドレス
-  password: &password
+  'Estimation was successfully updated.': 見積りを更新しました
+  Forgot your password?: パスワードを忘れた場合
+  Listing estimations: 見積り一覧
+  New Estimation: &new_estimation
+                  見積り新規登録
+  New estimation: *new_estimation
+  Note: &note
+        メモ
+  Password: &password
             パスワード
   Remember me: &remember_me
                ログインを記憶する
+  Show: 詳細
   Sign in: ログイン
+  Sign out: ログアウト
   Sign up: 新規登録
+  Title: &title
+         タイトル
   date:
     formats:
       default: "%Y/%m/%d"
@@ -121,6 +139,11 @@ ja:
         email: *email
         password: *password
         remember_me: *remember_me
+      estimation:
+        title: *title
+        description: *description
+        note: *note
+        client_name: *client_name
     errors:
       template:
         header:
@@ -161,3 +184,7 @@ ja:
 
       full_messages:
         format: "%{attribute}%{message}"
+  helpers:
+    submit:
+      create: "登録"
+      update: "更新"

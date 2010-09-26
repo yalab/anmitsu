@@ -1,29 +1,23 @@
-<h1>Listing estimations</h1>
+<h1><%= t('Listing estimations') %></h1>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Note</th>
-    <th>Client name</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th><%= t 'Title' %></th>
+    <th><%= t 'Description' %></th>
+    <th><%= t 'Note' %></th>
+    <th><%= t 'Client name' %></th>
   </tr>
 
 <% @estimations.each do |estimation| %>
   <tr>
-    <td><%= estimation.title %></td>
+    <td><%= link_to estimation.title, estimation %></td>
     <td><%= estimation.description %></td>
     <td><%= estimation.note %></td>
     <td><%= estimation.client_name %></td>
-    <td><%= link_to 'Show', estimation %></td>
-    <td><%= link_to 'Edit', edit_estimation_path(estimation) %></td>
-    <td><%= link_to 'Destroy', estimation, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Estimation', new_estimation_path %>
+<%= link_to  t('New Estimation'), new_estimation_path %>
