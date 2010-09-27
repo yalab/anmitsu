@@ -54,6 +54,8 @@ GEM
       mime-types
       treetop (>= 1.4.5)
     mime-types (1.16)
+    mocha (0.9.8)
+      rake
     mongo (1.0.7)
       bson (>= 1.0.4)
     mongoid (2.0.0.beta.18)
@@ -110,6 +112,7 @@ DEPENDENCIES
   devise
   factory_girl
   faker
+  mocha
   mongoid (= 2.0.0.beta.18)
   rails (= 3.0.0)
   rails3-generators
