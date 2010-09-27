@@ -1,28 +1,22 @@
 require 'test_helper'
 
 class AccountsControllerTest < ActionController::TestCase
-        
+  setup do
+    @account = Factory(:account)
+  end
   context "create action" do
-    should "render new template when model is invalid" do
-      Account.any_instance.stubs(:valid?).returns(false)
-      post :create
-      assert_template 'new'
-    end
-    
     should "redirect when model is valid" do
-      Account.any_instance.stubs(:valid?).returns(true)
-      post :create
-      assert_redirected_to
+      #Account.any_instance.stubs(:valid?).returns(true)
+      post :create, :format => 'json'
+      assert_response :success
     end
   end
-        
+
   context "destroy action" do
     should "destroy model and redirect to index action" do
-      accounts = Account.first
-      delete :destroy, :id => accounts
-      assert_redirected_to
-      assert !Account.exists?(accounts.id)
+      assert_difference "Account.count", -1 do
+        delete :destroy, :id => @account.to_param, :format => 'json'
+      end
     end
   end
-    
 end

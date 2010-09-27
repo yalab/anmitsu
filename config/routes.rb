@@ -1,12 +1,6 @@
 Anmitsu::Application.routes.draw do
-  get "accounts/create"
-
-  get "accounts/destroy"
-
+  resources :accounts, :only => [:create, :destroy]
   resources :estimations
-
-  get "root/index"
-
   root :to => "root#index"
   devise_for :user
   # The priority is based upon order of creation:
