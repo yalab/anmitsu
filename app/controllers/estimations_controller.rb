@@ -1,83 +1,48 @@
 class EstimationsController < ApplicationController
-  # GET /estimations
-  # GET /estimations.xml
+  respond_to :html, :json
   def index
-    @estimations = Estimation.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @estimations }
-    end
+    respond_with(@estimations = Estimation.all)
   end
 
-  # GET /estimations/1
-  # GET /estimations/1.xml
   def show
-    @estimation = Estimation.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @estimation }
-    end
+    respond_with(@estimation = Estimation.find(params[:id]))
   end
 
-  # GET /estimations/new
-  # GET /estimations/new.xml
   def new
-    @estimation = Estimation.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @estimation }
-    end
+    respond_with(@estimation = Estimation.new)
   end
 
-  # GET /estimations/1/edit
   def edit
     @estimation = Estimation.find(params[:id])
   end
 
-  # POST /estimations
-  # POST /estimations.xml
   def create
     @estimation = Estimation.new(params[:estimation])
+    return respond_with(@estimation) if @estimation.save
 
-    respond_to do |format|
-      if @estimation.save
-        format.html { redirect_to(@estimation, :notice => 'Estimation was successfully created.') }
-        format.xml  { render :xml => @estimation, :status => :created, :location => @estimation }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @estimation.errors, :status => :unprocessable_entity }
-      end
+    respond_to do |f|
+      f.html { render :action => "new" }
+      f.json  { render :json => @estimation.errors, :status => :unprocessable_entity }
     end
   end
 
-  # PUT /estimations/1
-  # PUT /estimations/1.xml
   def update
     @estimation = Estimation.find(params[:id])
 
+    return respond_with(@estimation) if @estimation.update_attributes(params[:estimation])
     respond_to do |format|
-      if @estimation.update_attributes(params[:estimation])
-        format.html { redirect_to(@estimation, :notice => t('Estimation was successfully updated.')) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @estimation.errors, :status => :unprocessable_entity }
-      end
+      format.html { render :action => "edit" }
+      format.xml  { render :xml => @estimation.errors, :status => :unprocessable_entity }
     end
   end
 
-  # DELETE /estimations/1
-  # DELETE /estimations/1.xml
   def destroy
     @estimation = Estimation.find(params[:id])
-    @estimation.destroy
-
+    (status, msg) = (@estimation.destroy) ?
+      [:ok, {:notice => t('Destroy success')}] : [:unprocessable_entity, {:alert => t('Destroy failure')}]
     respond_to do |format|
-      format.html { redirect_to(estimations_url) }
-      format.xml  { head :ok }
+      format.html { redirect_to(estimations_url, msg) }
+      format.xml  { head status }
     end
   end
 end
