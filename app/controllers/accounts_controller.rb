@@ -4,7 +4,7 @@ class AccountsController < ApplicationController
   def create
     @account = current_estimation.accounts.build(params[:account])
     @account.save
-    respond_with([current_estimation, @account])
+    respond_with(@account)
   end
 
   def destroy

@@ -6,6 +6,8 @@ ja:
   Back to list: 一覧に戻る
   Client name: &client_name
                顧客名
+  Content: &content
+           内容
   Description: &description
                詳細
   Didn't receive confirmation instructions?: 確認メールが来ない場合
@@ -23,6 +25,8 @@ ja:
         メモ
   Password: &password
             パスワード
+  Price: &price
+         価格
   Remember me: &remember_me
                ログインを記憶する
   Show: 詳細
@@ -144,6 +148,9 @@ ja:
         description: *description
         note: *note
         client_name: *client_name
+      account:
+        content: *content
+        price: *price
     errors:
       template:
         header:
@@ -188,3 +195,12 @@ ja:
     submit:
       create: "登録"
       update: "更新"
+  flash:
+    actions:
+      create:
+        notice: "{resource_name}を登録しました"
+      update:
+        notice: "{resource_name}を更新しました"
+      destroy:
+        notice: "{resource_name}を削除しました"
+        alert: "{resource_name}の削除に失敗しました"

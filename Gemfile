@@ -8,6 +8,7 @@ gem 'devise'
 
 group :development, :test do
   gem 'shoulda'
+  gem 'shoulda-activemodel'
   gem 'factory_girl'
   gem 'faker'
   gem 'rails3-generators'

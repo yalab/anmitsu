@@ -1,23 +1,40 @@
+<% @javascripts << 'estimations/show' %>
 <p>
   <b><%= t 'Title' %>:</b>
   <%= @estimation.title %>
 </p>
-
 <p>
   <b><%= t 'Description' %>:</b>
   <%= @estimation.description %>
 </p>
-
 <p>
   <b><%= t 'Note' %>:</b>
   <%= @estimation.note %>
 </p>
-
 <p>
   <b><%= t 'Client name' %>:</b>
   <%= @estimation.client_name %>
 </p>
-
-
+<%= form_for([@estimation, @estimation.accounts.new]) do |f| %>
+<table id="estimates_table">
+  <tr>
+    <th><%= f.label :content %></th>
+    <th><%= f.label :price %></th>
+    <th>&nbsp;</th>
+  </tr>
+  <tr id="form_row">
+    <td><%= f.text_field :content %></td>
+    <td><%= f.text_field :price, :size => 8 %></td>
+    <td><%= f.submit %></td>
+  </tr>
+  <% @estimation.accounts.each do |account| -%>
+  <tr>
+    <td><%= account.content %></td>
+    <td><%= account.price %></td>
+    <td>&nbsp;</td>
+  </tr>
+  <% end -%>
+</table>
+<% end -%>
 <%= link_to t('Edit'), edit_estimation_path(@estimation) %> |
 <%= link_to t('Back to list'), estimations_path %>

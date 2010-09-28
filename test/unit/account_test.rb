@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class AccountTest < ActiveSupport::TestCase
-  should "be valid" do
-    assert Account.new.valid?
+  setup do
+    @account = Factory(:account)
   end
+  [:price, :content].each{|name| should validate_presence_of(name) }
 end
