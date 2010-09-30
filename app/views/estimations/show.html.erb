@@ -28,10 +28,10 @@
     <td><%= f.submit %></td>
   </tr>
   <% @estimation.accounts.each do |account| -%>
-  <tr>
+  <tr id="account_<%= account.id %>">
     <td><%= account.content %></td>
     <td><%= account.price %></td>
-    <td>&nbsp;</td>
+    <td><%= link_to "[#{t('Destroy')}]", [@estimation, account], :method => :delete, :remote => true %></td>
   </tr>
   <% end -%>
 </table>

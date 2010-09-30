@@ -27,4 +27,9 @@ $(function(){
                                         });
                                  return false;
                                });
+    $("a[data-method=delete]").bind('ajax:success', function(){
+                                      var id = this.href.split('/').pop();
+                                      var node = $("#account_"+ id);
+                                      node.fadeOut('slow', function(){ node.remove(); });
+                                    });
 });

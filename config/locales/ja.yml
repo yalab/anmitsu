@@ -10,6 +10,7 @@ ja:
            内容
   Description: &description
                詳細
+  Destroy: 削除
   Didn't receive confirmation instructions?: 確認メールが来ない場合
   Edit: 編集
   Editing estimation: 見積り編集
