@@ -155,14 +155,6 @@ ja:
     errors:
       template:
         header:
-          one:    "%{model}にエラーが発生しました。"
-          other:  "%{model}に%{count}つのエラーが発生しました。"
-        body: "次の項目を確認してください。"
-
-  activerecord:
-    errors:
-      template:
-        header:
           one:   "%{model}にエラーが発生しました。"
           other: "%{model}に%{count}つのエラーが発生しました。"
         body: "次の項目を確認してください。"
