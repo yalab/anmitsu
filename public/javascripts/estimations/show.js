@@ -41,8 +41,10 @@ $(function(){
                                          error: function(res){
                                            var errors = $.parseJSON(res.responseText);
                                            for(k in errors){
-                                             $("#"+k+'_error').html(errors[k].replace(/^./, ''));
+                                             $("#"+k+'_error').html(errors[k]);
                                            }
+                                           $("#ajax_loader").hide();
+                                           $("#account_submit").show();
                                          }
                                         });
                                  return false;

@@ -18,22 +18,14 @@ class EstimationsController < ApplicationController
 
   def create
     @estimation = Estimation.new(params[:estimation])
-    return respond_with(@estimation) if @estimation.save
-
-    respond_to do |f|
-      f.html { render :action => "new" }
-      f.json  { render :json => @estimation.errors, :status => :unprocessable_entity }
-    end
+    @estimation.save
+    respond_with(@estimation)
   end
 
   def update
     @estimation = Estimation.find(params[:id])
-
-    return respond_with(@estimation) if @estimation.update_attributes(params[:estimation])
-    respond_to do |format|
-      format.html { render :action => "edit" }
-      format.xml  { render :xml => @estimation.errors, :status => :unprocessable_entity }
-    end
+    @estimation.update_attributes(params[:estimation])
+    respond_with(@estimation)
   end
 
   def destroy

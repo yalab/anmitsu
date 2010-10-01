@@ -18,7 +18,7 @@ class EstimationsControllerTest < ActionController::TestCase
 
   test "should create estimation" do
     assert_difference('Estimation.count') do
-      post :create, :estimation => {:email => Faker::Internet.email, :password => (pass = 'password'), :password_confirmation => pass}
+      post :create, :estimation => {:title => 'title'}
     end
 
     assert_redirected_to estimation_path(assigns(:estimation))

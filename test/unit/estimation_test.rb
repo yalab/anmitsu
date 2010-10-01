@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class EstimationTest < ActiveSupport::TestCase
-  should "be valid" do
-    assert Estimation.new.valid?
+  setup do
+    @estimation = Factory(:estimation)
   end
+  [:title].each{|name| should validate_presence_of(name) }
 end

@@ -5,4 +5,5 @@ class Estimation
   field :note, :type => String
   field :client_name, :type => String
   embeds_many :accounts
+  validates :title, :presence => true
 end
