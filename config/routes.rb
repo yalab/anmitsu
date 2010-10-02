@@ -1,6 +1,5 @@
 Anmitsu::Application.routes.draw do
-  resources :base_infos
-
+  resources :base_infos, :only => [:edit, :update]
   resources :accounts, :only => [:show]
   resources :estimations do
     resources :accounts, :only => [:create, :destroy]

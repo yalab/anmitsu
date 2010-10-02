@@ -4,4 +4,5 @@ Factory.define :base_info do |f|
   f.tel "090-4279-9916"
   f.fax "06-6666-6666"
   f.email "rudeboyjet@gmail.com"
+  f.association :user, :factory => :user
 end

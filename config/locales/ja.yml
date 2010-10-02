@@ -3,20 +3,29 @@
 # AR error messages are basically taken from Ruby-GetText-Package. Thanks to Masao Mutoh.
 
 ja:
+  Address: &address
+           住所
   Back to list: 一覧に戻る
   Client name: &client_name
                顧客名
   Content: &content
            内容
+  Corporate name or trade name: &corporate_name_or_trade_name
+                                法人名、屋号
   Description: &description
                詳細
   Destroy: 削除
   Didn't receive confirmation instructions?: 確認メールが来ない場合
   Edit: 編集
   Editing estimation: 見積り編集
+  Edit base information: &edit_base_information
+                         基本情報編集
+  Editing base_info: *edit_base_information
   Email: &email
          メールアドレス
   'Estimation was successfully updated.': 見積りを更新しました
+  Fax: &fax
+       Fax番号
   Forgot your password?: パスワードを忘れた場合
   Listing estimations: 見積り一覧
   New Estimation: &new_estimation
@@ -34,6 +43,8 @@ ja:
   Sign in: ログイン
   Sign out: ログアウト
   Sign up: 新規登録
+  Tel: &tel
+       電話番号
   Title: &title
          タイトル
   date:
@@ -152,6 +163,12 @@ ja:
       account:
         content: *content
         price: *price
+      base_info:
+        name: *corporate_name_or_trade_name
+        address: *address
+        tel: *tel
+        fax: *fax
+        email: *email
     errors:
       template:
         header:
