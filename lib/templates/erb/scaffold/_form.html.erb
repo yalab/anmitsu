@@ -1,0 +1,12 @@
+<%%= form_for(@<%= singular_table_name %>) do |f| %>
+<% for attribute in attributes -%>
+  <div class="field">
+    <%%= f.label :<%= attribute.name %> %><br />
+    <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+    <%%= f.error_message :<%= attribute.name %> %>
+  </div>
+<% end -%>
+  <div class="actions">
+    <%%= f.submit %>
+  </div>
+<%% end %>
