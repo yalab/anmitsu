@@ -5,4 +5,5 @@ class BaseInfo
   field :tel, :type => String
   field :fax, :type => String
   field :email, :type => String
+  embedded_in :user, :inverse_of => :base_info
 end
