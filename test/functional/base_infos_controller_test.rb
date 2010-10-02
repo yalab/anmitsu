@@ -2,7 +2,7 @@ require 'test_helper'
 
 class BaseInfosControllerTest < ActionController::TestCase
   setup do
-    @base_info = base_infos(:one)
+    @base_info = Factory(:base_info)
   end
 
   test "should get index" do
@@ -18,7 +18,7 @@ class BaseInfosControllerTest < ActionController::TestCase
 
   test "should create base_info" do
     assert_difference('BaseInfo.count') do
-      post :create, :base_info => @base_info.attributes
+      post :create, :base_info => @base_info.attributes.reject{|k, v| k == '_id'}
     end
 
     assert_redirected_to base_info_path(assigns(:base_info))
