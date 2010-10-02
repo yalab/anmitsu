@@ -72,6 +72,13 @@ GEM
     net-ssh-gateway (1.0.1)
       net-ssh (>= 1.99.1)
     polyglot (0.3.1)
+    prawn (0.8.4)
+      prawn-core (>= 0.8.4, < 0.9)
+      prawn-layout (>= 0.8.4, < 0.9)
+      prawn-security (>= 0.8.4, < 0.9)
+    prawn-core (0.8.4)
+    prawn-layout (0.8.4)
+    prawn-security (0.8.4)
     rack (1.2.1)
     rack-mount (0.6.13)
       rack (>= 1.0.0)
@@ -85,7 +92,7 @@ GEM
       activesupport (= 3.0.0)
       bundler (~> 1.0.0)
       railties (= 3.0.0)
-    rails3-generators (0.13.0)
+    rails3-generators (0.14.0)
     railties (3.0.0)
       actionpack (= 3.0.0)
       activesupport (= 3.0.0)
@@ -116,6 +123,7 @@ DEPENDENCIES
   faker
   mocha
   mongoid (= 2.0.0.beta.18)
+  prawn (= 0.8.4)
   rails (= 3.0.0)
   rails3-generators
   shoulda

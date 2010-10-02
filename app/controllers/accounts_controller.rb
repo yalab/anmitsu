@@ -1,9 +1,11 @@
 class AccountsController < ApplicationController
+  include ActionView::Helpers::NumberHelper
   respond_to :json
 
   def create
     @account = estimation.accounts.build(params[:account])
     @account.save
+    @account.price = number_to_currency(@account.price)
     respond_with(@account)
   end
 

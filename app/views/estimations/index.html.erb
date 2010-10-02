@@ -6,16 +6,17 @@
     <th><%= t 'Description' %></th>
     <th><%= t 'Note' %></th>
     <th><%= t 'Client name' %></th>
+    <th>&nbsp;</th>
   </tr>
-
-<% @estimations.each do |estimation| %>
+<% @estimations.each do |estimation| -%>
   <tr>
     <td><%= link_to estimation.title, estimation %></td>
     <td><%= estimation.description %></td>
     <td><%= estimation.note %></td>
     <td><%= estimation.client_name %></td>
+    <td>[<%= link_to 'PDFダウンロード', estimation_path(estimation, :format => 'pdf') %>]</td>
   </tr>
-<% end %>
+<% end -%>
 </table>
 
 <br />

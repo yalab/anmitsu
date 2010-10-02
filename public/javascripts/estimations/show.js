@@ -16,7 +16,11 @@ $(function(){
                                            var fields = ['content', 'price'];
                                            for(var n = 0; n < fields.length; n++){
                                              var td = $(document.createElement('td'));
-                                             td.html(account[fields[n]]);
+                                             var k = fields[n];
+                                             if(k == 'price'){
+                                               td.css('text-align', 'right');
+                                             }
+                                             td.html(account[k]);
                                              tr.append(td);
                                            }
                                            td = $(document.createElement('td'));

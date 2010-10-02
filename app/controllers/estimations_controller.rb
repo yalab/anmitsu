@@ -1,5 +1,6 @@
 class EstimationsController < ApplicationController
   respond_to :html, :json
+  respond_to :pdf, :only => [:show]
   before_filter :authenticate_user!
 
   def index
