@@ -24,6 +24,7 @@ class EstimationsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to estimation_path(assigns(:estimation))
+    assert_equal @user.id, assigns(:estimation).user_id
   end
 
   test "should show estimation" do

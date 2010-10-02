@@ -20,6 +20,7 @@ class EstimationsController < ApplicationController
 
   def create
     @estimation = current_user.estimations.new(params[:estimation])
+    @estimation.user = current_user
     @estimation.save
     respond_with(@estimation)
   end
