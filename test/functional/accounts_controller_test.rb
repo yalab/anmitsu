@@ -2,7 +2,9 @@ require 'test_helper'
 
 class AccountsControllerTest < ActionController::TestCase
   setup do
-    @estimation = Factory(:estimation)
+    (@user = Factory(:user)).confirm!
+    sign_in @user
+    @estimation = @user.estimations.first
   end
 
   context "create action" do

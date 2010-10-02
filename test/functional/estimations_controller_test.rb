@@ -2,10 +2,8 @@ require 'test_helper'
 
 class EstimationsControllerTest < ActionController::TestCase
   setup do
-    @user = Factory(:user)
-    @user.confirm!
+    (@user = Factory(:user)).confirm!
     sign_in @user
-
     @estimation = @user.estimations.first
   end
 
