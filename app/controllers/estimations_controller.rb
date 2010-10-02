@@ -1,40 +1,42 @@
 class EstimationsController < ApplicationController
   respond_to :html, :json
+  before_filter :authenticate_user!
+
   def index
-    respond_with(@estimations = Estimation.all)
+    respond_with(@estimations = current_user.estimations.all)
   end
 
   def show
-    respond_with(@estimation = Estimation.find(params[:id]))
+    respond_with(@estimation = current_user.estimations.find(params[:id]))
   end
 
   def new
-    respond_with(@estimation = Estimation.new)
+    respond_with(@estimation = current_user.estimations.new)
   end
 
   def edit
-    @estimation = Estimation.find(params[:id])
+    @estimation = current_user.estimations.find(params[:id])
   end
 
   def create
-    @estimation = Estimation.new(params[:estimation])
+    @estimation = current_user.estimations.new(params[:estimation])
     @estimation.save
     respond_with(@estimation)
   end
 
   def update
-    @estimation = Estimation.find(params[:id])
+    @estimation = current_user.estimations.find(params[:id])
     @estimation.update_attributes(params[:estimation])
     respond_with(@estimation)
   end
 
   def destroy
-    @estimation = Estimation.find(params[:id])
+    @estimation = current_user.estimations.find(params[:id])
     (status, msg) = (@estimation.destroy) ?
-      [:ok, {:notice => t('Destroy success')}] : [:unprocessable_entity, {:alert => t('Destroy failure')}]
-    respond_to do |format|
+    [:ok, {:notice => t('Destroy success')}] : [:unprocessable_entity, {:alert => t('Destroy failure')}]
+    respond_with(@estimation) do |format|
       format.html { redirect_to(estimations_url, msg) }
-      format.xml  { head status }
+      format.json  { head status }
     end
   end
 end

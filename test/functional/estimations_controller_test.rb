@@ -2,7 +2,11 @@ require 'test_helper'
 
 class EstimationsControllerTest < ActionController::TestCase
   setup do
-    @estimation = Factory(:estimation)
+    @user = Factory(:user)
+    @user.confirm!
+    sign_in @user
+
+    @estimation = @user.estimations.first
   end
 
   test "should get index" do
