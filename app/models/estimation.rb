@@ -17,6 +17,7 @@ class Estimation
     Dir.mkdir(dir) unless File.exists? dir
     fname = "#{dir}/#{title}.pdf"
     estimation = self
+    helper = self.class
     Prawn::Document.generate(fname, :page_layout => :portrait) do
       font "#{Rails.root}/vendor/fonts/ipag00302/ipag.ttf"
       text I18n.t("Estimation"), :size => 36, :align => :center
@@ -35,7 +36,7 @@ class Estimation
       }
       left_rows = [[estimation.client_name, I18n.t('Sir')],
                    [estimation.title, ''],
-                   [I18n.t('Total'), helper.number_to_currency(estimation.total)]]
+                   [I18n.t('Total'), number_to_currency(estimation.total)]]
 
       base_info = estimation.user.base_info
       right_rows = [[I18n.t('Name'),    base_info.name],
@@ -52,7 +53,7 @@ class Estimation
       bounding_box [bounds.width - (stamp_width * 3) - margin_botom, cursor + 30], :height => stamp_width + margin_botom, :width => 100 do
         2.times{|n| stroke_rectangle([cursor + n * stamp_width, cursor], stamp_width, stamp_width) }
       end
-      rows =  estimation.accounts.map{|account| [account.content, helper.number_to_currency(account.price)]} + (0..(45 - estimation.accounts.length)).map{['', '']}
+      rows =  estimation.accounts.map{|account| [account.content, number_to_currency(account.price)]} + (0..(45 - estimation.accounts.length)).map{['', '']}
       table rows, {:headers       => ["Content", "Price"].map{|k| I18n.t(k) },
                    :header_color  => '3333aa',
                    :align         => {1 => :right},
