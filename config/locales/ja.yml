@@ -6,6 +6,14 @@ ja:
   Address: &address
            住所
   Back to list: 一覧に戻る
+  Bank name: &bank_name
+             銀行名
+  Branch name: &branch_name
+               支店名
+  Bank account name: &bank_account_name
+                     口座名義
+  Bank account code: &bank_account_code
+                     口座番号
   Client name: &client_name
                顧客名
   Content: &content
@@ -176,6 +184,11 @@ ja:
         tel: *tel
         fax: *fax
         email: *email
+      bank_account:
+        bank_name: *bank_name
+        branch_name: *branch_name
+        name: *bank_account_name
+        code: *bank_account_code
     errors:
       template:
         header:

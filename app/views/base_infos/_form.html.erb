@@ -24,6 +24,25 @@
     <%= f.text_field :email %>
     <%= f.error_message :email %>
   </div>
+
+  <%= fields_for(@bank_account) do |f|%>
+    <div class="field">
+      <%= f.label :bank_name %><br />
+      <%= f.text_field :bank_name %>
+    </div>
+    <div class="field">
+      <%= f.label :branch_name %><br />
+      <%= f.text_field :branch_name %>
+    </div>
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :code %><br />
+      <%= f.text_field :code %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

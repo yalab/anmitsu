@@ -1,8 +1,6 @@
-# Read about factories at http://github.com/thoughtbot/factory_girl
-
 Factory.define :bank_account do |f|
-  f.bank_name "MyString"
-  f.branch_name "MyString"
-  f.name "MyString"
-  f.code "MyString"
+  f.bank_name "An City Bank"
+  f.branch_name "Osaka"
+  f.name "yalab"
+  f.code "0123-123-12-1"
 end
