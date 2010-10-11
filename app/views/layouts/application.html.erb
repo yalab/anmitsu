@@ -7,19 +7,43 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<ul>
-  <% if current_user %>
-    <li><%= link_to t('Sign out'), destroy_user_session_path %></li>
-    <li><%= link_to t('Listing estimations'), estimations_path %></li>
-    <li><%= link_to t('Edit base information'), edit_base_info_path(current_user.base_info) %></li>
-  <% else %>
-    <li><%= link_to t('Sign in'), new_user_session_path %></li>
-  <% end %>
-</ul>
-<% if notice %><div id="notice"><%= notice %></div><% end %>
-<% if alert %><div id="alert"><%= alert %></div><% end %>
-
-<%= yield %>
+<% if false %>
+  <% if notice %><div id="notice"><%= notice %></div><% end %>
+  <% if alert %><div id="alert"><%= alert %></div><% end %>
+<% end %>
+<div id="siteholder">
+  <h1><%= link_to 'Anmitsu', root_path %></h1>
+  <h2>For your buisiness.</h2>
+  <div id="siteWrap">
+    <div class="wrapCapT"></div>
+    <div id="middleWrap" class="clear">
+      <div id="content">
+        <%= yield %>
+      </div>
+      <div id="sidebar">
+        <h4>Menu</h4>
+        <ul>
+          <% if current_user %>
+            <li><%= link_to t('Sign out'), destroy_user_session_path %></li>
+            <li><%= link_to t('Listing estimations'), estimations_path %></li>
+            <li><%= link_to t('Edit base information'), edit_base_info_path(current_user.base_info) %></li>
+          <% else %>
+            <li><%= link_to t('Sign up'), new_user_registration_path %></li>
+            <li><%= link_to t('Sign in'), new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="wrapCapT"></div>
+  </div>
+  <div id="footer">
+    <div class="cp">&copy;2010&nbsp; ya-lab.org</div>
+    <div class="by">
+      Theme by <a title="Free Webtemplates" href="http://www.merlyn-buchhandlung.de/webtemplates.html">Merlyn</a>
+    </div>
+  </div>
+</div>
+  
 <% @javascripts.each do |js| -%>
   <%= javascript_include_tag js %>
 <% end -%>

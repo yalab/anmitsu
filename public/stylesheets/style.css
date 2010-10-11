@@ -1,0 +1,555 @@
+/*
+Theme Name: Nightly
+Theme URI: http://merlyn-buchhandlung.de/webtemplates.html
+Description: Nightly is a nice tableless wordpress theme
+Version: 1.0.2
+Author: Merlyn
+Author URI: http://merlyn-buchhandlung.de/
+Tags: dark, blue, green, fixed width, two columns, right sidebar, 2columns, widgets, gravatars, simple, clean
+
+The CSS, XHTML and design is released under GPL: http://www.opensource.org/licenses/gpl-license.php
+If you like my work please keep the link in the footer intact :)
+
+*/
+
+* {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.clear:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clear {
+  display: inline-table;
+}
+
+/* Hides from IE-mac \*/
+* html .clear {
+  height: 1%;
+}
+
+.clear {
+  display: block;
+}
+/* End hide from IE-mac */
+
+img, fieldset, a {
+	border: 0 none;
+}
+
+a img {
+	vertical-align: middle;
+}
+
+textarea {
+	font-size: 100%;
+	overflow: auto;
+}
+
+html, body {
+	background: #002157 url('/images/bg.gif') left top repeat-x;
+	color: #a6b2c4;
+	text-align: center;
+}
+
+body {
+	font-size: .7em;
+}
+
+#siteholder {
+	margin: 0 auto;
+	padding-top: 20px;
+	text-align: left;
+	width: 800px;
+}
+
+#siteholder h1, #siteholder h2,
+#siteholder h1 a, #siteholder h2 a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#siteholder h1 {
+	font-size: 2em;
+}
+
+#siteholder h2 {
+	font-size: 1.3em;
+	font-weight: normal;
+}
+
+#siteholder h1, #siteholder h2 {
+	margin-left: 20px;
+}
+
+#siteWrap {
+	display: block;
+	padding: 20px 0 10px 0;
+	width: 800px;
+}
+
+.wrapCapT, #wrapCapB, #middleWrap {
+	background: transparent url('/images/middle-bg.gif') left top repeat-y;
+	display: block;
+	width: 800px;
+}
+
+#middleWrap {
+	background-color: #cde76d;
+	padding-left: 20px;
+	width: 780px;
+}
+
+.wrapCapT, #wrapCapB {
+	display: block;
+	height: 20px;
+}
+
+#content {
+	color: #000b1e;
+	float: left;
+	padding: 0 60px 0 30px;
+	width: 490px;
+}
+
+#content a {
+	color: #107ee9;
+	text-decoration: underline;
+}
+
+#content a:hover, #content a:focus {
+	text-decoration: none;
+}
+
+#content .post {
+	border-bottom: 1px solid #e2e2e2;
+	margin-bottom: 50px;
+	padding-bottom: 20px;
+}
+
+html .single .post {
+	margin-bottom: 20px !important;
+}
+
+#content .post-head h3, #content .post-head p {
+	margin: 0 0 0 70px;
+}
+
+#content .post-head h3 {
+	display: block;
+	font-size: 1.6em;
+	font-weight: normal;
+	line-height: 130%;
+	padding-bottom: 5px;
+}
+
+#content .post-head h3, #content .post-head h3 a {
+	color: #000b1e;
+	text-decoration: none;
+}
+
+#content .post-head h3 a:hover, #content .post-head h3 a:focus {
+	color: #107ee9;
+}
+
+#content .post-head h3{
+  padding-left: 65px !important;
+}
+
+#content .date {
+	background: #002156 url('/images/date-bg.gif') left top no-repeat;
+	color: #fff;
+	display: block;
+	float: left;
+	margin-left: 0 !important;
+	padding: 5px 2px;
+	text-align: center;
+	width: 51px;
+}
+
+#content .date .day {
+	display: block;
+	font-size: 2em;
+}
+
+#content .post-body {
+	font-size: 1.15em;
+	line-height: 150%;
+	padding: 15px 0 20px 0;
+}
+
+#content .post-body p {
+	padding-bottom: 15px;
+}
+
+#content .f-left {
+	float: left;
+	margin: 5px 25px 20px 0;
+}
+
+#content .f-right {
+	float: right;
+	margin: 5px 0 20px 25px;
+}
+
+#content .post-opts .tags {
+	float: left;
+	width: 360px;
+}
+
+#content .post-opts .comments {
+	float: right;
+	text-align: right;
+	width: 130px;
+}
+
+#content .post-opts .comments a {
+	background: transparent url('/images/ico_comment.gif') left 50% no-repeat;
+	padding-left: 16px;
+}
+
+#commentslist {
+	display: block;
+}
+
+#commentslist ol {
+	list-style: none;
+	width: 490px;
+}
+
+#commentslist ol li {
+	font-size: 1.1em;
+	margin: 10px 0;
+	padding: 10px 10px;
+	width: 470px;
+
+}
+
+#commentslist ol li p {
+	font-size: .9em;
+	line-height: 150%;
+}
+
+#commentslist .alt {
+	background: #f5f8e9;
+}
+
+#commentslist .gravatar {
+	background: #fff;
+	border: 1px solid #eee;
+	display: block;
+	float: left;
+	padding: 3px;
+	margin: 0 10px 3px 0;
+}
+
+.post cite, .post blockquote {
+	background: #f1f8d7 url('images/ico_quote.gif') 10px 10px no-repeat;
+	display: block;
+	font-size: .95em;
+	font-style: italic;
+	margin-bottom: 15px;
+	padding: 10px 20px 10px 50px;
+	width: 420px;
+}
+
+.post h3, .post h4 {
+	font-size: 1.1em;
+}
+
+.post h2, .post h3, .post h4, .post h5, .post h6 {
+	color: #000b1e !important;
+  margin-left: 0 !important;
+	margin-top: 10px;
+	padding-bottom: 2px;
+}
+
+.post ul {
+	list-style: none;
+}
+
+.post ol {
+	margin-left: 20px;
+}
+
+.post ul li {
+	background: transparent url('images/ico_listentry.gif') left 9px no-repeat;
+	padding: 2px 2px 2px 12px;
+}
+
+code {
+	font-family: monospace;
+	font-size: 120%;
+}
+
+#commentslist .gravatar img {
+	vertical-align: middle;
+}
+
+#commentslist cite {
+	font-style: normal;
+	font-weight: bold;
+}
+
+#commentslist .commentmetadata {
+	display: block;
+	font-size: .9em;
+	padding: 3px 0 10px 0;
+}
+
+#commentslist .commentmetadata, #commentslist .commentmetadata a {
+	color: #888;
+	text-decoration: none;
+}
+
+#newcomment {
+	padding: 30px 0 50px 0;
+}
+
+#newcomment h3 {
+	display: block;
+	padding-bottom: 10px;
+}
+
+#newcomment label {
+	display: block;
+	font-weight: bold;
+}
+
+#newcomment label small {
+	font-size: .95em;
+	font-weight: normal;
+}
+
+#newcomment input, #newcomment textarea {
+	border: 1px solid #ccc;
+	padding: 3px 5px;
+	width: 480px;
+}
+
+#newcomment form p {
+	padding: 5px 0;
+}
+
+#newcomment textarea {
+	margin-top: 10px;
+}
+
+#newcomment #submit {
+	background: #003993;
+	border: 0 none;
+	color: #fff;
+	width: 100px;
+}
+
+#content .prevnext {
+	color: #888;
+	display: block;
+	padding-bottom: 50px;
+	width: 490px;
+}
+
+#content .prevnext li {
+	display: block;
+	width: 235px;
+}
+
+#content .prevnext a {
+	font-weight: bold;
+}
+
+#content .prev {
+	float: left;
+}
+
+#content .prev a {
+	margin-left: 4px;
+}
+
+#content .next {
+	float: right;
+	text-align: right;
+}
+
+#content .next a {
+	margin-right: 4px;
+}
+
+#sidebar {
+	float: right;
+	padding: 40px 0;
+	width: 200px;
+}
+
+#sidebar h4 {
+	background: #000e27 url('/images/sidebar-li-bg.gif') left top repeat-x;
+	color: #fff;
+	display: block;
+	font-weight: bold;
+	padding: 6px 10px 0 10px;
+	width: 180px;
+}
+
+#sidebar ul {
+	list-style: none;
+	padding-bottom: 20px;
+}
+
+
+
+#sidebar li a {
+	color: #000b1e;
+	text-decoration: none;
+	font-weight: normal;
+	padding: 2px 0 2px 0;
+	width: 200px;
+	background: transparent url('/images/ico_pg.gif') 10px .1em no-repeat;
+	padding: 0 5px 0 25px;
+	width: 170px;
+}
+
+#sidebar h4 {
+	padding-bottom: 5px;
+}
+
+#sidebar .tagcloud {
+	display: block;
+	padding: 10px;
+}
+
+#sidebar .tagcloud a {
+	text-decoration: none;
+}
+
+#sidebar a:hover, #sidebar a:focus {
+	text-decoration: underline;
+}
+
+#sidebar h2, #sidebar h2 a {
+	font-size: 11.2px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.widget {
+	margin-top: 10px;
+}
+
+#sidebar li a {
+		color: #000b1e;
+}
+
+#sidebar h2 {
+	margin-left: 0;
+}
+#search {
+	background: #000e27 url('images/sidebar-li-bg.gif') left top repeat-x;
+	margin-top: 20px;
+	padding: 15px 10px 20px 10px;
+	width: 180px;
+}
+
+#search label {
+	color: #fff;
+	font-weight: bold;
+}
+
+#search .wrap {
+	background: #fff;
+	margin-top: 2px;
+	padding: 3px 0;
+	position: relative;
+}
+
+#search .tx {
+	background: transparent;
+	border: 0 none;
+	font-size: 1em;
+	padding: 3px;
+}
+
+#search .mag {
+	background: transparent url('images/ico_magnifier.gif') left 2px no-repeat;
+	border: 0 none;
+	height: 18px;
+	position: absolute;
+	right: 5px;
+	top: 3px;
+	width: 18px;
+}
+
+#footer {
+	display: block;
+	padding: 0 25px 40px 25px;
+	width: 570px;
+}
+
+#footer, #footer a {
+	color: #a6b2c4;
+}
+
+#footer a {
+	text-decoration: none;
+}
+
+#footer a:hover, #footer a:focus {
+	text-decoration: underline;
+}
+
+#footer .cp {
+	float: left;
+	font-weight: bold;
+	width: 245px;
+}
+
+#footer .by {
+	float: right;
+	text-align: right;
+	width: 245px;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption-dd {
+	font-size: 11px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}

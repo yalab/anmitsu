@@ -47,6 +47,8 @@ ja:
         メモ
   Password: &password
             パスワード
+  Passowrd confirmation: &password_confirmation
+                         パスワード(確認)
   Plan name: 案件名
   Price: &price
          価格
@@ -169,6 +171,7 @@ ja:
       user:
         email: *email
         password: *password
+        password_confirmation: *password_confirmation
         remember_me: *remember_me
       estimation:
         title: *title
