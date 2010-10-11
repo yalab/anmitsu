@@ -101,6 +101,10 @@ body {
 	width: 800px;
 }
 
+.wrapCapT{
+  padding-left: 50px;
+}
+
 #middleWrap {
 	background-color: #cde76d;
 	padding-left: 20px;

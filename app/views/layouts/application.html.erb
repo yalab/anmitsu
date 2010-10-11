@@ -7,15 +7,14 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-<% if false %>
-  <% if notice %><div id="notice"><%= notice %></div><% end %>
-  <% if alert %><div id="alert"><%= alert %></div><% end %>
-<% end %>
 <div id="siteholder">
   <h1><%= link_to 'Anmitsu', root_path %></h1>
   <h2>For your buisiness.</h2>
   <div id="siteWrap">
-    <div class="wrapCapT"></div>
+    <div class="wrapCapT">
+      <% if notice %><div class="notice"><%= notice %></div><% end %>
+      <% if alert %><div class="alert"><%= alert %></div><% end %>
+    </div>
     <div id="middleWrap" class="clear">
       <div id="content">
         <%= yield %>
