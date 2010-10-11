@@ -5,7 +5,7 @@ Anmitsu::Application.routes.draw do
     resources :accounts, :only => [:create, :destroy]
   end
   root :to => "root#index"
-  devise_for :user
+  devise_for :user, :controllers => {:sessions => 'users/sessions'}
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
