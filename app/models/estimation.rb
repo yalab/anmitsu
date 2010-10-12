@@ -38,7 +38,8 @@ class Estimation
                    [estimation.title, ''],
                    [I18n.t('Total'), number_to_currency(estimation.total)]]
 
-      base_info = estimation.user.base_info
+      base_info    = estimation.user.base_info
+      bank_account = estimation.user.bank_account
       right_rows = [[I18n.t('Name'),    base_info.name],
                     [I18n.t('Address'), base_info.address],
                     [I18n.t('Tel'),     base_info.tel]]
@@ -48,14 +49,17 @@ class Estimation
         float{ build_rows.call(left_rows, :under_line => true) } && build_rows.call(right_rows, :left_margin => 320)
       end
 
+      table [:bank_name, :branch_name, :code, :name].map{|k| [I18n.t("activemodel.attributes.bank_account.#{k}"), bank_account[k]]}, :headers => [I18n.t('Recipient'), ''], :column_widths => {0 => 100, 1 => 200}, :align => {0 => :left, 1 => :left}
+
       stamp_width = 50
       margin_botom = 20
       bounding_box [bounds.width - (stamp_width * 3) - margin_botom, cursor + 30], :height => stamp_width + margin_botom, :width => 100 do
         2.times{|n| stroke_rectangle([cursor + n * stamp_width, cursor], stamp_width, stamp_width) }
       end
-      rows =  estimation.accounts.map{|account| [account.content, number_to_currency(account.price)]} + (0..(45 - estimation.accounts.length)).map{['', '']}
+      rows =  estimation.accounts.map{|account| [account.content, number_to_currency(account.price)]} + (0..(35 - estimation.accounts.length)).map{['', '']}
       table rows, {:headers       => ["Content", "Price"].map{|k| I18n.t(k) },
                    :header_color  => '3333aa',
+                   :header_text_color => 'ffffff',
                    :align         => {1 => :right},
                    :align_headers => :center,
                    :column_widths => {1 => 100},

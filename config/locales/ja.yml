@@ -52,6 +52,7 @@ ja:
   Plan name: 案件名
   Price: &price
          価格
+  Recipient: 振込先
   Remember me: &remember_me
                ログインを記憶する
   Show: 詳細
