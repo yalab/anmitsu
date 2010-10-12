@@ -1,21 +1,21 @@
-<h1><%= t('Listing estimations') %></h1>
+<h3><%= t('Listing estimations') %></h3>
 
-<table>
-  <tr>
-    <th><%= t 'Title' %></th>
-    <th><%= t 'Description' %></th>
-    <th><%= t 'Note' %></th>
-    <th><%= t 'Client name' %></th>
-    <th>&nbsp;</th>
-  </tr>
 <% @estimations.each do |estimation| -%>
-  <tr>
-    <td><%= link_to estimation.title, estimation %></td>
-    <td><%= estimation.description %></td>
-    <td><%= estimation.note %></td>
-    <td><%= estimation.client_name %></td>
-    <td>[<%= link_to 'PDFダウンロード', estimation_path(estimation, :format => 'pdf') %>]</td>
+  <div class="post">
+    <div class="post-head"><h4><%= estimation.title %>(<%= estimation.client_name %>)</h4></div>
+    <div class="post-content">
+    <p><%= estimation.description %></p>
+    <p><%= estimation.note %></p>
+    <p style="text-align: right;">合計: <%= number_to_currency(estimation.total) %></p>
+    </div>
+    <p style="text-align: right;">
+    [<%= link_to '編集', edit_estimation_path(estimation) %>]&nbsp;
+    [<%= link_to '明細編集', estimation %>]&nbsp;
+    [<%= link_to 'PDFダウンロード', estimation_path(estimation, :format => 'pdf') %>]&nbsp;    
+    
+    </p>
   </tr>
+  </div>
 <% end -%>
 </table>
 

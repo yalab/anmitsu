@@ -1,7 +1,10 @@
 <% @javascripts << 'estimations/show' %>
+<div style="text-align: right;">
+<%= link_to t('Back to list'), estimations_path %>
+</div>
 <p>
   <b><%= t 'Title' %>:</b>
-  <%= @estimation.title %>
+  <%= link_to @estimation.title, edit_estimation_path(@estimation) %>
 </p>
 <p>
   <b><%= t 'Description' %>:</b>
@@ -36,5 +39,5 @@
   <% end -%>
 </table>
 <% end -%>
-<%= link_to t('Edit'), edit_estimation_path(@estimation) %> |
-<%= link_to t('Back to list'), estimations_path %>
+<%#= link_to t('Edit'),  %>
+
