@@ -22,7 +22,7 @@ ja:
       updated: 'Your password was changed successfully. You are now signed in.'
     confirmations:
       send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
-      confirmed: 'Your account was successfully confirmed. You are now signed in.'
+      confirmed: 'アカウントの確認を行いました。'
     users:
       signed_up: ''
       updated: 'You updated your account successfully.'

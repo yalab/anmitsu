@@ -26,6 +26,8 @@ ja:
   Destroy: 削除
   Didn't receive confirmation instructions?: 確認メールが来ない場合
   Edit: 編集
+  Edit base info: 基本情報編集
+  Edit details: 明細編集
   Editing estimation: 見積り編集
   Edit base information: &edit_base_information
                          基本情報編集
@@ -46,11 +48,13 @@ ja:
   New estimation: *new_estimation
   Note: &note
         メモ
+  PDF download: PDFダウンロード
   Password: &password
             パスワード
   Passowrd confirmation: &password_confirmation
                          パスワード(確認)
   Plan name: 案件名
+  Preferences: 設定
   Price: &price
          価格
   Recipient: 振込先

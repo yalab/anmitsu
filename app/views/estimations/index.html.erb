@@ -9,10 +9,8 @@
     <p style="text-align: right;">合計: <%= number_to_currency(estimation.total) %></p>
     </div>
     <p style="text-align: right;">
-    [<%= link_to '編集', edit_estimation_path(estimation) %>]&nbsp;
-    [<%= link_to '明細編集', estimation %>]&nbsp;
-    [<%= link_to 'PDFダウンロード', estimation_path(estimation, :format => 'pdf') %>]&nbsp;    
-    
+    <%= link_to "[#{t('Edit details')}]", estimation %>&nbsp;
+    <%= link_to "[#{t('PDF download')}]", estimation_path(estimation, :format => 'pdf') %>&nbsp;
     </p>
   </tr>
   </div>

@@ -1,10 +1,11 @@
-<% @javascripts << 'estimations/show' %>
+<% @javascripts << 'estimations/show' -%>
+<h3><%= t('Edit details') %></h3>
 <div style="text-align: right;">
 <%= link_to t('Back to list'), estimations_path %>
 </div>
 <p>
   <b><%= t 'Title' %>:</b>
-  <%= link_to @estimation.title, edit_estimation_path(@estimation) %>
+   <%= @estimation.title %>
 </p>
 <p>
   <b><%= t 'Description' %>:</b>
@@ -18,6 +19,11 @@
   <b><%= t 'Client name' %>:</b>
   <%= @estimation.client_name %>
 </p>
+
+<div style="text-align: right;">
+  <%= link_to "[#{t("Edit base info")}]", edit_estimation_path(@estimation) %>&nbsp;
+  <%= link_to "[#{t('PDF download')}]", estimation_path(@estimation, :format => 'pdf') %>&nbsp;</div>
+
 <%= form_for([@estimation, @estimation.accounts.new]) do |f| %>
 <table id="estimates_table">
   <tr>

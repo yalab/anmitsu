@@ -28,6 +28,7 @@ class Estimation
         left_margin = options[:left_margin] || 0
         under_line = options[:under_line] || false
         rows.each do |left, right|
+          right ||= ''
           bounding_box([left_margin, cursor], :width => 220, :height => 15){
             float{ text right, :align => :right, :width => 20 } && text(left)
             stroke_horizontal_rule if under_line
