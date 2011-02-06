@@ -104,6 +104,7 @@ GEM
     shoulda (2.11.3)
     shoulda-activemodel (0.0.2)
       shoulda (>= 2.11.0)
+    stateflow (0.4.0)
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
@@ -131,4 +132,5 @@ DEPENDENCIES
   rails3-generators
   shoulda
   shoulda-activemodel
+  stateflow
   unicorn
