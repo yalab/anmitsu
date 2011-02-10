@@ -19,6 +19,11 @@
   <b><%= t 'Note' %>:</b>
   <%= @estimation.note %>
 </p>
+<p>
+  <b><%= t 'State' %>:</b>
+  <%= t @estimation.state %>
+</p>
+
 
 <div style="text-align: right;">
   <%= link_to "[#{t("Edit base info")}]", edit_estimation_path(@estimation) %>&nbsp;

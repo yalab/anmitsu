@@ -1,12 +1,17 @@
 class Estimation
   include Mongoid::Document
   include Mongoid::Timestamps
-
-  [:title, :description, :note, :client_name].each{|name| field name, :type => String }
+  include Stateflow
+  [:title, :description, :note, :client_name, :state].each{|name| field name, :type => String }
   [:created_at].each{|name| field name, :type => Time }
   referenced_in :user
   embeds_many :accounts
   validates :title, :presence => true
+
+  stateflow do
+    state :estimate, :order, :delivery, :receipt
+    initial :estimate
+  end
 
   def total
     accounts.map{|account| account.price }.inject(:+)
@@ -70,9 +75,3 @@ class Estimation
     fname
   end
 end
-
-
-
-
-
-
