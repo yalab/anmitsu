@@ -22,7 +22,7 @@ ja:
   Corporate name or trade name: &corporate_name_or_trade_name
                                 法人名、屋号
   Description: &description
-               詳細
+               説明
   Destroy: 削除
   Didn't receive confirmation instructions?: 確認メールが来ない場合
   Edit: 編集
@@ -47,7 +47,7 @@ ja:
                   見積り新規登録
   New estimation: *new_estimation
   Note: &note
-        メモ
+        備考
   PDF download: PDFダウンロード
   Password: &password
             パスワード

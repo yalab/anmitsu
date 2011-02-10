@@ -8,16 +8,16 @@
    <%= @estimation.title %>
 </p>
 <p>
+  <b><%= t 'Client name' %>:</b>
+  <%= @estimation.client_name %>
+</p>
+<p>
   <b><%= t 'Description' %>:</b>
   <%= @estimation.description %>
 </p>
 <p>
   <b><%= t 'Note' %>:</b>
   <%= @estimation.note %>
-</p>
-<p>
-  <b><%= t 'Client name' %>:</b>
-  <%= @estimation.client_name %>
 </p>
 
 <div style="text-align: right;">
@@ -32,7 +32,7 @@
     <th>&nbsp;</th>
   </tr>
   <tr id="form_row">
-    <td><%= f.text_field :content %><div id="content_error" class="alert"></div></td>
+    <td><%= f.text_field :content, :size => 40 %><div id="content_error" class="alert"></div></td>
     <td><%= f.text_field :price, :size => 8 %><div id="price_error" class="alert"></div></td>
     <td><%= f.submit %><%= image_tag 'ajax-loader.gif', :style => 'display: none;', :id => 'ajax_loader' %></td>
   </tr>

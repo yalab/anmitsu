@@ -22,3 +22,10 @@ module Anmitsu
     end
   end
 end
+module ActionView::Helpers::InstanceTagMethods
+  remove_const(:DEFAULT_FIELD_OPTIONS)
+  remove_const(:DEFAULT_TEXT_AREA_OPTIONS)
+  DEFAULT_FIELD_OPTIONS = {'size' => 50}.freeze
+  DEFAULT_TEXT_AREA_OPTIONS = {"cols" => 63, "rows" => 20}.freeze
+end
+
