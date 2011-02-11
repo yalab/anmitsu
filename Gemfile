@@ -7,6 +7,7 @@ gem 'capistrano'
 gem 'devise'
 gem 'prawn', '0.8.4'
 gem 'stateflow'
+gem 'pdfkit'
 
 group :development, :test do
   gem 'shoulda'
