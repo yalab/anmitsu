@@ -5,7 +5,6 @@ gem 'bson_ext', '1.2.0'
 gem 'mongoid', '2.0.0.beta.20'
 gem 'capistrano'
 gem 'devise'
-gem 'prawn', '0.8.4'
 gem 'stateflow'
 gem 'pdfkit'
 

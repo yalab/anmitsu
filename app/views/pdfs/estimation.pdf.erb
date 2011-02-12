@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t 'Estimation' %></title>
+  <meta charset="UTF-8">
+  <style type="text/css">
+    body{
+      margin-left: 30xp;
+      margin-right: 30px;
+    }
+    h1{
+      text-align: center;
+    }
+    #estimates_table th{
+      background: #3333aa;
+      color: #ffffff;
+    }
+    #last_update{
+      text-align: right;
+    }
+    #summary{
+      float: left;
+    }
+    #user{
+      float: right;
+      margin-right: 30px;
+    }
+    #bank{
+      float: right;
+      margin-right: 30px;
+    }
+    #estimates_table{
+      border: 1px solid #000000;
+      margin-top: 40px;
+    }
+    #total th, #total td{
+      border-top: 1px dotted #000000;
+    }
+    #total th{
+      background: #FFFFFF;
+      color: #000000;
+    }
+    #total td{
+      text-align: right;
+    }
+    .estimation_content{
+      width: 780px;
+    }
+    .estimation_price{
+      width: 200px;
+      text-align: right;
+    }
+    .even{
+      background: #F8F8F8;
+    }
+  </style>
+</head>
+<body>
+<h1><%= t 'Estimation' %></h1>
+<p id="last_update"><%= t 'Last update' %>: <%= @estimation.updated_at.strftime("%Y年%m月%d日") %></p>
+
+<div id="summary">
+  <p><%= @estimation.client_name %>御中</p>
+  <p><%= @estimation.title %></p>
+  <p><%= t 'Total' %> <%= number_to_currency(@estimation.total) %></p>
+  <p><%= t 'Expire' %> <%= @estimation.expire %></p>
+</div>
+
+<div id="user">
+  <% base_info = @estimation.user.base_info %>
+  <table>
+    <tr><th><%= t 'Name' %></th><td><%= base_info.name %></td></tr>
+    <tr><th><%= t 'Address' %></th><td><%= base_info.address %></td></tr>
+    <tr><th><%= t 'Tel' %></th><td><%= base_info.tel %></td></tr>
+    <% if base_info.fax.length > 0 %><tr><th><%= t 'Fax' %></th><td><%= base_info.fax %></td></tr><% end %>
+  </table>
+</div>
+<div style="clear: both;"></div>
+<% if @estimation.delivery? || @estimation.receipt? %>
+  <div id="bank">
+    <% bank_account = @estimation.user.bank_account %>
+    <h2><%= t 'Recipient' %></h2>
+    <table>
+      <tr><th><%= t 'Bank name' %></th><td><%= bank_account.bank_name %></td></tr>
+      <tr><th><%= t 'Branch name' %></th><td><%= bank_account.branch_name %></td></tr>
+      <tr><th><%= t 'Bank account name' %></th><td><%= bank_account.name %></td></tr>
+      <tr><th><%= t 'Bank account code' %></th><td><%= bank_account.code %></td></tr>
+    </table>
+  </div>
+<% end %>
+<div style="clear: both;"></div>
+
+<table id="estimates_table">
+  <tr>
+    <th><%= t 'Content' %></th>
+    <th><%= t 'Price' %></th>
+  </tr>
+  <% @estimation.accounts.each do |account| -%>
+    <tr id="account_<%= account.id %>" class="<%= cycle 'odd', 'even' %>">
+      <td class="estimation_content"><%= account.content %></td>
+      <td class="estimation_price"><%= number_to_currency(account.price) %></td>
+    </tr>
+  <% end -%>
+  <tr id="total">
+    <th><%= t 'Total' %></th>
+    <td><%= number_to_currency @estimation.total %></td>
+  </tr>
+</table>
+</body>
+</html>

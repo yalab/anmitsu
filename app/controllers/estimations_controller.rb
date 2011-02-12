@@ -8,7 +8,9 @@ class EstimationsController < ApplicationController
   end
 
   def show
-    respond_with(@estimation = current_user.estimations.find(params[:id]))
+    respond_with(@estimation = current_user.estimations.find(params[:id])) do |format|
+      format.pdf{ render :pdf => @estimation }
+    end
   end
 
   def new
