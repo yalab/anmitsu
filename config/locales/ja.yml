@@ -38,6 +38,8 @@ ja:
   Estimation: &estimation
               見積書
   'Estimation was successfully updated.': 見積りを更新しました
+  Expire: &expire
+          有効期限
   Fax: &fax
        Fax番号
   Forgot your password?: パスワードを忘れた場合
@@ -72,6 +74,7 @@ ja:
   Title: &title
          タイトル
   Total: 合計
+  Update success: 設定を更新しました
   date:
     formats:
       default: "%Y年%m月%d日"
@@ -186,6 +189,7 @@ ja:
         description: *description
         note: *note
         client_name: *client_name
+        expire: *expire
       account:
         content: *content
         price: *price
