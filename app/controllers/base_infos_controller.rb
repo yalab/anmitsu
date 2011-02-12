@@ -13,7 +13,7 @@ class BaseInfosController < ApplicationController
     @bank_account = current_user.bank_account
     @bank_account.update_attributes(params[:bank_account])
     respond_with(@base_info) do |f|
-      f.html{ redirect_to root_path }
+      f.html{ redirect_to estimations_path, :notice => I18n.t('Update success') }
     end
   end
 end
