@@ -1,7 +1,7 @@
 class User
   include Mongoid::Document
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :confirmable
-  references_many :estimations
+  references_many :items
   embeds_one :base_info
   embeds_one :bank_account
   after_create do

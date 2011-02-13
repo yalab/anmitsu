@@ -1,4 +1,4 @@
-class Estimation
+class Item
   include Mongoid::Document
   include Mongoid::Timestamps
   include Stateflow

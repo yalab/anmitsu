@@ -24,7 +24,7 @@
         <ul>
           <% if current_user %>
             <li><%= link_to t('Sign out'), destroy_user_session_path %></li>
-            <li><%= link_to t('Listing estimations'), estimations_path %></li>
+            <li><%= link_to t('Listing items'), items_path %></li>
             <li><%= link_to t('Preferences'), edit_base_info_path(current_user.base_info) %></li>
           <% else %>
             <li><%= link_to t('Sign up'), new_user_registration_path %></li>

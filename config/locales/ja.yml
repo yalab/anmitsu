@@ -28,27 +28,27 @@ ja:
   Edit: 編集
   Edit base info: 基本情報編集
   Edit details: 明細編集
-  Editing estimation: 見積り編集
+  Editing item: 見積り編集
   Edit base information: &edit_base_information
                          基本情報編集
   Editing base_info: *edit_base_information
   Email: &email
          メールアドレス
   estimate: 見積り
-  Estimation: &estimation
+  Item: &item
               見積書
-  'Estimation was successfully updated.': 見積りを更新しました
+  'Item was successfully updated.': 見積りを更新しました
   Expire: &expire
           有効期限
   Fax: &fax
        Fax番号
   Forgot your password?: パスワードを忘れた場合
   'Last update': 最終更新日
-  Listing estimations: 見積り一覧
+  Listing items: 見積り一覧
   Name: 名前
-  New Estimation: &new_estimation
+  New Item: &new_item
                   見積り新規登録
-  New estimation: *new_estimation
+  New item: *new_item
   Note: &note
         備考
   PDF download: PDFダウンロード
@@ -184,7 +184,7 @@ ja:
         password: *password
         password_confirmation: *password_confirmation
         remember_me: *remember_me
-      estimation:
+      item:
         title: *title
         description: *description
         note: *note

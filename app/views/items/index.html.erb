@@ -1,0 +1,22 @@
+<h3><%= t('Listing items') %></h3>
+
+<% @items.each do |item| -%>
+  <div class="post">
+    <div class="post-head"><h4><%= item.title %>(<%= item.client_name %>)</h4></div>
+    <div class="post-content">
+    <p><%= item.description %></p>
+    <p><%= item.note %></p>
+    <p style="text-align: right;">合計: <%= number_to_currency(item.total) %></p>
+    </div>
+    <p style="text-align: right;">
+    <%= link_to "[#{t('Edit details')}]", item %>&nbsp;
+    <%= link_to "[#{t('PDF download')}]", item_path(item, :format => 'pdf') %>&nbsp;
+    </p>
+  </tr>
+  </div>
+<% end -%>
+</table>
+
+<br />
+
+<%= link_to  t('New Item'), new_item_path %>

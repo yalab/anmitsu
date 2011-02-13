@@ -1,39 +1,39 @@
-<% @javascripts << 'estimations/show' -%>
+<% @javascripts << 'items/show' -%>
 <h3><%= t('Edit details') %></h3>
 <div style="text-align: right;">
-<%= link_to t('Back to list'), estimations_path %>
+<%= link_to t('Back to list'), items_path %>
 </div>
 <p>
   <b><%= t 'Title' %>:</b>
-   <%= @estimation.title %>
+   <%= @item.title %>
 </p>
 <p>
   <b><%= t 'Client name' %>:</b>
-  <%= @estimation.client_name %>
+  <%= @item.client_name %>
 </p>
 <p>
   <b><%= t 'Description' %>:</b>
-  <%= @estimation.description %>
+  <%= @item.description %>
 </p>
 <p>
   <b><%= t 'Expire' %></b>
-  <%= @estimation.expire %>
+  <%= @item.expire %>
 </p>
 <p>
   <b><%= t 'Note' %>:</b>
-  <%= @estimation.note %>
+  <%= @item.note %>
 </p>
 <p>
   <b><%= t 'State' %>:</b>
-  <%= t @estimation.state %>
+  <%= t @item.state %>
 </p>
 
 
 <div style="text-align: right;">
-  <%= link_to "[#{t("Edit base info")}]", edit_estimation_path(@estimation) %>&nbsp;
-  <%= link_to "[#{t('PDF download')}]", estimation_path(@estimation, :format => 'pdf') %>&nbsp;</div>
+  <%= link_to "[#{t("Edit base info")}]", edit_item_path(@item) %>&nbsp;
+  <%= link_to "[#{t('PDF download')}]", item_path(@item, :format => 'pdf') %>&nbsp;</div>
 
-<%= form_for([@estimation, @estimation.accounts.new]) do |f| %>
+<%= form_for([@item, @item.accounts.new]) do |f| %>
 <table id="estimates_table">
   <tr>
     <th><%= f.label :content %></th>
@@ -45,11 +45,11 @@
     <td><%= f.text_field :price, :size => 8 %><div id="price_error" class="alert"></div></td>
     <td><%= f.submit %><%= image_tag 'ajax-loader.gif', :style => 'display: none;', :id => 'ajax_loader' %></td>
   </tr>
-  <% @estimation.accounts.each do |account| -%>
+  <% @item.accounts.each do |account| -%>
   <tr id="account_<%= account.id %>">
     <td><%= account.content %></td>
     <td style="text-align: right;"><%= number_to_currency(account.price) %></td>
-    <td><%= link_to "[#{t('Destroy')}]", [@estimation, account], :method => :delete, :remote => true %></td>
+    <td><%= link_to "[#{t('Destroy')}]", [@item, account], :method => :delete, :remote => true %></td>
   </tr>
   <% end -%>
 </table>

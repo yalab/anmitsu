@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class EstimationTest < ActiveSupport::TestCase
+class ItemTest < ActiveSupport::TestCase
   setup do
-    @estimation = Factory(:estimation)
+    @item = Factory(:item)
   end
   [:title].each{|name| should validate_presence_of(name) }
 end
