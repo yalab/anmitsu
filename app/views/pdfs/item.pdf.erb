@@ -66,12 +66,12 @@
 </div>
 
 <div id="user">
-  <% base_info = @item.user.base_info %>
+  <% information = @item.user.information %>
   <table>
-    <tr><th><%= t 'Name' %></th><td><%= base_info.name %></td></tr>
-    <tr><th><%= t 'Address' %></th><td><%= base_info.address %></td></tr>
-    <tr><th><%= t 'Tel' %></th><td><%= base_info.tel %></td></tr>
-    <% if base_info.fax.length > 0 %><tr><th><%= t 'Fax' %></th><td><%= base_info.fax %></td></tr><% end %>
+    <tr><th><%= t 'Name' %></th><td><%= information.name %></td></tr>
+    <tr><th><%= t 'Address' %></th><td><%= information.address %></td></tr>
+    <tr><th><%= t 'Tel' %></th><td><%= information.tel %></td></tr>
+    <% if information.fax.length > 0 %><tr><th><%= t 'Fax' %></th><td><%= information.fax %></td></tr><% end %>
   </table>
 </div>
 <div style="clear: both;"></div>

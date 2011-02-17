@@ -1,4 +1,4 @@
-Factory.define :base_info do |f|
+Factory.define :information do |f|
   f.name "Enterprise Neet co.ltd"
   f.address "Suita Osaka"
   f.tel "090-4279-9916"

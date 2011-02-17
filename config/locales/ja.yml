@@ -31,9 +31,9 @@ ja:
   Edit base info: 基本情報編集
   Edit details: 明細編集
   Editing item: 案件編集
-  Edit base information: &edit_base_information
+  Edit base information: &edit_informationrmation
                          基本情報編集
-  Editing base_info: *edit_base_information
+  Editing information: *edit_informationrmation
   Email: &email
          メールアドレス
   estimate: 見積り
@@ -197,7 +197,7 @@ ja:
       account:
         content: *content
         price: *price
-      base_info:
+      information:
         name: *corporate_name_or_trade_name
         address: *address
         tel: *tel

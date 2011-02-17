@@ -5,8 +5,8 @@ class UserTest < ActiveSupport::TestCase
     setup do
       @user = User.create(:email => 'test@example.com', :password => (pass = 'password'), :password_confirmation => pass)
     end
-    should "generate base_info and bank_account" do
-      assert_instance_of BaseInfo,    @user.base_info
+    should "generate information and bank_account" do
+      assert_instance_of Information,    @user.information
       assert_instance_of BankAccount, @user.bank_account
     end
   end
