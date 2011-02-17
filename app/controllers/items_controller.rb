@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
     @item = current_user.items.new(params[:item])
     @item.user = current_user
     if @item.save
-      flash[:notice] = 'Item was successfully created'
+      flash[:notice] = t('Item was successfully created')
     else
       flash[:alert]  = 'Failed to delete'
     end
@@ -41,7 +41,7 @@ class ItemsController < ApplicationController
   def destroy
     @item = current_user.items.find(params[:id])
     (status, msg) = (@item.destroy) ?
-    [:ok, {:notice => 'Destroy success'}] : [:unprocessable_entity, {:alert => t('Destroy failure')}]
+    [:ok, {:notice => t('Destroy success')}] : [:unprocessable_entity, {:alert => t('Destroy failure')}]
     respond_with(@item) do |format|
       format.html { redirect_to(items_url, msg) }
       format.json  { head status }
