@@ -95,5 +95,18 @@ class ItemsControllerTest < ActionController::TestCase
         end
       end
     end
+    context "not a owner" do
+      setup do
+        pass = 'password'
+        new_user = User.create(:email => Faker::Internet.email, :password => pass, :password_confirmation => pass)
+        new_user.confirm!
+        @new_item = new_user.items.create(:title => 'foobar')
+      end
+      should "ignore update" do
+        assert_raise(Mongoid::Errors::DocumentNotFound){
+          put :update, :id => @new_item.to_param, :item => @item.attributes
+        }
+      end
+    end
   end
 end
