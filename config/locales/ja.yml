@@ -57,6 +57,7 @@ ja:
             パスワード
   Passowrd confirmation: &password_confirmation
                          パスワード(確認)
+  Password reset: パスワード再登録
   Plan name: 案件名
   Preferences: 設定
   Price: &price
@@ -64,6 +65,9 @@ ja:
   Recipient: 振込先
   Remember me: &remember_me
                ログインを記憶する
+  Resend confirmation instructions: 確認メール再送信
+  Send: 送信
+  Send me reset password instructions: 送信
   Show: 詳細
   Sign in: ログイン
   Sign out: ログアウト
