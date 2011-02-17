@@ -5,6 +5,7 @@
 ja:
   Address: &address
            住所
+  'Are you sure you want to delete this item?': この案件を削除してもよろしいですか？
   Back to list: 一覧に戻る
   Back to top: TOPへ戻る
   Bank name: &bank_name
@@ -24,6 +25,7 @@ ja:
   Description: &description
                説明
   Destroy: 削除
+  'Destroy success': 削除を実行しました
   Didn't receive confirmation instructions?: 確認メールが来ない場合
   Edit: 編集
   Edit base info: 基本情報編集
@@ -34,10 +36,11 @@ ja:
   Editing base_info: *edit_base_information
   Email: &email
          メールアドレス
-  estimate: 案件
+  estimate: 見積り
   Item: &item
               見積書
-  'Item was successfully updated.': 案件を更新しました
+  'Item was successfully updated': 案件を更新しました
+  'Item was successfully created': 案件を登録しました
   Fax: &fax
        Fax番号
   Forgot your password?: パスワードを忘れた場合

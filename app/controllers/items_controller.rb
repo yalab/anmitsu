@@ -24,7 +24,9 @@ class ItemsController < ApplicationController
   def create
     @item = current_user.items.new(params[:item])
     @item.user = current_user
-    @item.save
+    if @item.save
+      flash[:notice] = I18n.t('Item was successfully created')
+    end
     respond_with(@item)
   end
 
