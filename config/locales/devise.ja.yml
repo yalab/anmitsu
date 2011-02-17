@@ -1,8 +1,8 @@
 ja:
   errors:
     messages:
-      not_found: "not found"
-      already_confirmed: "was already confirmed"
+      not_found: "入力したアドレスは登録されていません"
+      already_confirmed: "すでに確認済みです。「ログイン」よりログインしてご利用ください"
       not_locked: "was not locked"
 
   devise:
@@ -18,11 +18,11 @@ ja:
       signed_in: 'ログインしました'
       signed_out: 'ログアウトしました'
     passwords:
-      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
-      updated: 'Your password was changed successfully. You are now signed in.'
+      send_instructions: 'パスワード再設定のURLを送信しました'
+      updated: 'パスワードを変更し、ログインしました'
     confirmations:
-      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
-      confirmed: 'アカウントを有効にしログインしました'
+      send_instructions: '確認メールを再送しました'
+      confirmed: 'アカウントを有効にし、ログインしました'
     users:
       signed_up: ''
       updated: 'You updated your account successfully.'
@@ -34,6 +34,6 @@ ja:
       confirmation_instructions:
         subject: '【Anmitsu】ご登録ありがとうございます。'
       reset_password_instructions:
-        subject: 'Reset password instructions'
+        subject: '【Anmitsu】パスワードの変更'
       unlock_instructions:
         subject: 'Unlock Instructions'

@@ -1,4 +1,4 @@
 <h3>ご登録ありがとうございます。</h3>
-<p>メールアドレス確認用のメールを送信しました。メール中に記載されているURLにアクセスし、登録を確定してください。しばらく立ってもメールが送信されない場合は<%= Anmitsu::Email[:info] %>までご連絡ください。</p>
+<p>メールアドレス確認用のメールを送信しました。メール中に記載されているURLにアクセスし、登録を確定してください。しばらく立ってもメールが送信されない場合は  <%= link_to  t("Didn't receive confirmation instructions?"), new_confirmation_path(resource_name) %> をお試しください。</p>
 
-<%= link_to t('Back to top'), root_path %>
+<p style="text-align: right;"><%= link_to t('Back to top'), root_path %></p>

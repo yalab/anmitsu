@@ -19,6 +19,7 @@ ja:
   Bank account code: &bank_account_code
                      口座番号
   Bill: 請求書
+  Change your password: パスワード変更
   Client name: &client_name
                顧客名
   Content: &content
@@ -41,6 +42,8 @@ ja:
   Email: &email
          メールアドレス
   estimate: 見積り
+  Failed to create: 作成に失敗しました
+  Failed to delete: 削除に失敗しました
   Item: &item
               見積書
   'Item was successfully updated': 案件を更新しました
@@ -87,6 +90,7 @@ ja:
   State: *state
   Sub total: 小計
   tax-inclusive pricing: 税込
+  Token is over expire: 変更期限が過ぎています。もう一度「パスワードを忘れた場合」をやり直してください
   Tel: &tel
        電話番号
   Title: &title

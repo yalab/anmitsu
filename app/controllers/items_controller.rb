@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
     if @item.save
       flash[:notice] = t('Item was successfully created')
     else
-      flash[:alert]  = t('Failed to delete')
+      flash[:alert]  = t('Failed to create')
     end
     respond_with(@item)
   end

@@ -1,16 +1,15 @@
-<h2>Change your password</h2>
-
+<% if resource.errors[:reset_password_token].length > 0 -%><% flash.now[:alert] = t('Token is over expire') %><% end %>
+<h3><%= t 'Change your password' %></h3>
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
   <p><%= f.label :password %><br />
   <%= f.password_field :password %></p>
-
+  <%= f.error_message :password %>
   <p><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></p>
 
-  <p><%= f.submit "Change my password" %></p>
+  <p><%= f.submit t "Send" %></p>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>

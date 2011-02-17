@@ -1,5 +1,5 @@
 <h3><%= t('Listing items') %></h3>
-
+<div style="text-align: right;"><%= link_to  t('New Item'), new_item_path %></div>
 <% @items.each do |item| -%>
   <div class="post">
     <div class="post-head">
@@ -22,5 +22,3 @@
 </table>
 <%= paginate @items %>
 <br />
-
-<%= link_to  t('New Item'), new_item_path %>
