@@ -2,11 +2,15 @@
 
 <% @items.each do |item| -%>
   <div class="post">
-    <div class="post-head"><h4><%= item.title %>(<%= item.client_name %>)</h4></div>
+    <div class="post-head">
+      <h4><%= item.title %>(<%= item.client_name %>)</h4>
+      
+    </div>
     <div class="post-content">
     <p><%= item.description %></p>
     <p><%= item.note %></p>
     <p style="text-align: right;"><%= t 'Total' %>: <%= number_to_currency(item.total_with_tax) %>(<%= t 'tax-inclusive pricing' %>)</p>
+    <p style="text-align: right;"><%= t 'Last update' %>:&nbsp;<%= item.updated_at.strftime("%F") %></p>
     </div>
     <p style="text-align: right;">
     <%= link_to "[#{t('Edit details')}]", item %>&nbsp;
