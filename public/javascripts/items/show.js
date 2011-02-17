@@ -1,6 +1,7 @@
 $(function(){
     $("#account_submit").click(function(){
-      $(this).hide();
+      $(this).attr('disabled', 'disabled');
+      $(".alert").html('');
       $("#ajax_loader").show();
       var form = $("#new_account");
       $.ajax({url: form.attr('action'),
@@ -8,9 +9,8 @@ $(function(){
               data: form.serialize(),
               success: function(account){
                 $(":text").val('');
-                $(".alert").val('');
                 $("#ajax_loader").hide();
-                $("#account_submit").show();
+                $("#account_submit").attr('disabled', '');
                 var tr = $(document.createElement('tr'));
                 tr.attr('id', 'account_' + account._id);
                 var fields = ['content', 'price'];
@@ -43,12 +43,13 @@ $(function(){
                 tr.fadeIn('slow');
               },
               error: function(res){
+                var fields = {price: "価格", content: "内容"};
                 var errors = $.parseJSON(res.responseText);
                 for(k in errors){
-                  $("#"+k+'_error').html(errors[k]);
+                  $("#"+k+'_error').html(fields[k] + "を" + errors[k]);
                 }
                 $("#ajax_loader").hide();
-                $("#account_submit").show();
+                $("#account_submit").attr('disabled', '');
               }
              });
       return false;
