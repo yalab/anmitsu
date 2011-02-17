@@ -31,7 +31,7 @@ class <%= controller_class_name %>Controller < ApplicationController
   def destroy
     @<%= singular_table_name %> = <%= orm_class.find(class_name, "params[:id]") %>
     (status, msg) = (@<%= orm_instance.destroy %>) ?
-      [:ok, {:notice => t('Destroy success')}] : [:unprocessable_entity, {:alert => t('Destroy failure')}]
+      [:ok, {:notice => 'Destroy success'}] : [:unprocessable_entity, {:alert => t('Destroy failure')}]
     respond_with(@<%= singular_table_name %>) do |format|
       format.html { redirect_to(<%= index_helper %>_url, msg) }
       format.json  { head status }
