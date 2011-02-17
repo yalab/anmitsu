@@ -15,7 +15,7 @@ class Item
   end
 
   def total
-    @total ||= accounts.map(&:price).inject(:+)
+    @total ||= (accounts.length > 0) ? accounts.map(&:price).inject(:+) : 0
   end
 
   def total_with_tax

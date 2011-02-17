@@ -18,11 +18,6 @@ class ItemsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should show item" do
-    get :show, :id => @item.to_param
-    assert_response :success
-  end
-
   test "should get edit" do
     get :edit, :id => @item.to_param
     assert_response :success
@@ -63,6 +58,27 @@ class ItemsControllerTest < ActionController::TestCase
       end
       should "display alert message" do
         assert_equal 'Failed to delete', flash[:alert]
+      end
+    end
+  end
+
+  context "on GET :show" do
+    context "existed item " do
+      setup do
+        get :show, :id => @item.to_param
+      end
+      should "success" do
+        assert_response :success
+      end
+    end
+
+    context "new create item" do
+      setup do
+        item = @user.items.create(:title => 'new item')
+        get :show, :id => item.to_param
+      end
+      should "success" do
+        assert_response :success
       end
     end
   end
