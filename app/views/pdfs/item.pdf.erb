@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= t 'Item' %></title>
+  <title><%= @item.title %></title>
   <meta charset="UTF-8">
   <style type="text/css">
     body{
@@ -74,7 +74,14 @@
   </style>
 </head>
 <body>
-<h1><%= t 'Item' %></h1>
+<h1>
+  <% case @item.state -%>
+  <% when 'estimate' -%>
+    <%= t('An estimate')%>
+  <% else -%>
+    <%= t 'Bill' %>
+  <% end -%>
+</h1>
 <p id="last_update"><%= t 'Last update' %>: <%= @item.updated_at.strftime("%Y年%m月%d日") %></p>
 
 <div id="summary">
@@ -93,7 +100,12 @@
   </table>
 </div>
 <div style="clear: both;"></div>
-<% if @item.delivery? || @item.receipt? %>
+<% if @item.estimate? -%>
+  <p id="note">
+    <span id="note_label"><%= t 'Note' %>:</span><br>
+    <%= nl2br @item.note %>
+  </p>
+<% else -%>
   <div id="bank">
     <% bank_account = @item.user.bank_account %>
     <h2><%= t 'Recipient' %></h2>
@@ -104,13 +116,8 @@
       <tr><th><%= t 'Bank account code' %></th><td><%= bank_account.code %></td></tr>
     </table>
   </div>
-<% end %>
+<% end -%>
 <div style="clear: both;"></div>
-
-<div id="note">
-  <div id="note_label"><%= t 'Note' %>:</div>
-  <%= nl2br @item.note %>
-</div>
 
 <table id="account_table">
   <tr>
