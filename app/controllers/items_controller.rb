@@ -4,7 +4,8 @@ class ItemsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    respond_with(@items = current_user.items.all)
+    per_page = 10
+    respond_with(@items = current_user.items.paginate(:page => params[:page], :per_page => per_page))
   end
 
   def show

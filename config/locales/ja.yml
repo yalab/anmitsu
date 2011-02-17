@@ -52,6 +52,7 @@ ja:
   New Item: &new_item
                   案件新規登録
   New item: *new_item
+  Next page: 次へ
   Note: &note
         備考
   order: 受注
@@ -64,6 +65,7 @@ ja:
   Personal information: 個人情報
   Plan name: 案件名
   Preferences: 設定
+  Previous page: 前へ
   Price: &price
          価格
   receipt: 入金

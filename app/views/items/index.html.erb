@@ -16,6 +16,7 @@
   </div>
 <% end -%>
 </table>
+<%= paginate @items %>
 <br />
 
 <%= link_to  t('New Item'), new_item_path %>

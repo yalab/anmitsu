@@ -128,3 +128,4 @@ DEPENDENCIES
   shoulda-activemodel
   stateflow
   unicorn
+  will_paginate (= 3.0.pre2)
