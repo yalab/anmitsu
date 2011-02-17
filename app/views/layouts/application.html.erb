@@ -42,7 +42,12 @@
     </div>
   </div>
 </div>
-  
+<% case params[:controller] + params[:action] %>
+<% when 'itemsshow' %>
+<script type="text/javascript">
+  var t = {confirm_state_change: '<%= t 'Are you sure item state change?' %>'}
+</script>
+<% end %>
 <% @javascripts.each do |js| -%>
   <%= javascript_include_tag js %>
 <% end -%>

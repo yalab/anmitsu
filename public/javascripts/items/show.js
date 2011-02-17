@@ -79,4 +79,11 @@ $(function(){
     node.fadeOut('slow', function(){ node.remove(); });
   };
   $("a[data-method=delete]").bind('ajax:success', delete_success);
+  $("#item_state").change(function(){
+    if(!confirm(t.confirm_state_change)){
+      this.form.reset();
+      return;
+    }
+    this.form.submit();
+  });
 });

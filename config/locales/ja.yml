@@ -6,6 +6,7 @@ ja:
   Address: &address
            住所
   'Are you sure you want to delete this item?': この案件を削除してもよろしいですか？
+  'Are you sure item state change?': 状態を変更してもよろしいですか？
   Back to list: 一覧に戻る
   Back to top: TOPへ戻る
   Bank name: &bank_name
@@ -22,6 +23,7 @@ ja:
            内容
   Corporate name or trade name: &corporate_name_or_trade_name
                                 法人名、屋号
+  delivery: 納品
   Description: &description
                説明
   Destroy: 削除
@@ -52,6 +54,7 @@ ja:
   New item: *new_item
   Note: &note
         備考
+  order: 受注
   PDF download: PDFダウンロード
   Password: &password
             パスワード
@@ -63,6 +66,7 @@ ja:
   Preferences: 設定
   Price: &price
          価格
+  receipt: 入金
   Recipient: 振込先
   Remember me: &remember_me
                ログインを記憶する
@@ -74,7 +78,9 @@ ja:
   Sign out: ログアウト
   Sign up: 新規登録
   Sir: 様
-  State: 状態
+  state: &state
+         状態
+  State: *state
   Sub total: 小計
   tax-inclusive pricing: 税込
   Tel: &tel

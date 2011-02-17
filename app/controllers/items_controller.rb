@@ -27,14 +27,18 @@ class ItemsController < ApplicationController
     if @item.save
       flash[:notice] = t('Item was successfully created')
     else
-      flash[:alert]  = 'Failed to delete'
+      flash[:alert]  = t('Failed to delete')
     end
     respond_with(@item)
   end
 
   def update
     @item = current_user.items.find(params[:id])
-    @item.update_attributes(params[:item])
+    if @item.update_attributes(params[:item])
+      flash[:notice] = t('Item was successfully updated')
+    else
+      flash[:alert] = t('Failed to update')
+    end
     respond_with(@item)
   end
 

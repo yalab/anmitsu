@@ -23,11 +23,6 @@ class ItemsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update item" do
-    put :update, :id => @item.to_param, :item => @item.attributes
-    assert_redirected_to item_path(assigns(:item))
-  end
-
   test "should destroy item" do
     assert_difference('Item.count', -1) do
       delete :destroy, :id => @item.to_param
@@ -79,6 +74,25 @@ class ItemsControllerTest < ActionController::TestCase
       end
       should "success" do
         assert_response :success
+      end
+    end
+  end
+
+  context "on PUT :update" do
+    context "owner" do
+      should "update item" do
+        put :update, :id => @item.to_param, :item => @item.attributes
+        assert_redirected_to item_path(assigns(:item))
+        assert_equal 'Item was successfully updated', flash[:notice]
+      end
+      context "database is abnormal" do
+        setup do
+          Item.any_instance.stubs(:update_attributes).returns(false)
+          put :update, :id => @item.to_param, :item => @item.attributes
+        end
+        should "error message in flash" do
+          assert_equal 'Failed to update', flash[:alert]
+        end
       end
     end
   end
