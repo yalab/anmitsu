@@ -6,6 +6,7 @@ class AccountTest < ActiveSupport::TestCase
     @account = @item.accounts.first
   end
   [:price, :content].each{|name| should validate_presence_of(name) }
+  should validate_numericality_of(:price)
   context "#to_json" do
     should "insert Item#total and Item#total_with_tax" do
       account = @item.accounts.create(:title => 'foobar', :price => 100)
