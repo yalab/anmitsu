@@ -25,6 +25,9 @@
       float: right;
       margin-right: 30px;
     }
+    #user th{
+      text-align: left;
+    }
     #bank{
       float: right;
       margin-right: 30px;
@@ -42,6 +45,21 @@
     }
     #total td{
       text-align: right;
+    }
+    #note{
+      border: 1px solid #000000;
+      padding: 4px;
+      margin-top: 20px;
+      height: 200px;
+    }
+    #note_lavel{
+      font-weight: bold;
+      border-bottom: 1px dotted #000000;
+      margin-bottom: 4px;
+    }
+    #total_with_tax{
+      text-decoration: underline;
+      font-weight: bold;
     }
     .item_content{
       width: 780px;
@@ -62,7 +80,7 @@
 <div id="summary">
   <p><%= @item.client_name %>御中</p>
   <p><%= @item.title %></p>
-  <p><%= t 'Total' %> <%= number_to_currency(@item.total) %></p>
+  <p id="total_with_tax"><%= t 'Total' %> <%= number_to_currency(@item.total_with_tax) %>(<%= t 'tax-inclusive pricing' %>)</p>
 </div>
 
 <div id="user">
@@ -89,6 +107,11 @@
 <% end %>
 <div style="clear: both;"></div>
 
+<div id="note">
+  <div id="note_label"><%= t 'Note' %>:</div>
+  <%= nl2br @item.note %>
+</div>
+
 <table id="account_table">
   <tr>
     <th><%= t 'Content' %></th>
@@ -101,9 +124,10 @@
     </tr>
   <% end -%>
   <tr id="total">
-    <th><%= t 'Total' %></th>
+    <th><%= t 'Sub total' %></th>
     <td><%= number_to_currency @item.total %></td>
   </tr>
 </table>
+
 </body>
 </html>

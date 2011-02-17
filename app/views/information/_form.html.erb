@@ -1,4 +1,5 @@
 <%= form_for(@information) do |f| %>
+  <h4>■&nbsp;<%= t 'Personal information' %></h4>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -26,6 +27,7 @@
   </div>
 
   <%= fields_for(@bank_account) do |f|%>
+    <h4>■&nbsp;口座情報</h4>
     <div class="field">
       <%= f.label :bank_name %><br />
       <%= f.text_field :bank_name %>
