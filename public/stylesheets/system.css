@@ -4,3 +4,12 @@
 .notice{
   color: green !important;
 }
+.indent{
+  margin-left: 1em;
+}
+#total_row,
+#total_row th,
+#total_row td{
+  border-top: 1px dotted #000000;
+  font-weight: bold;
+}

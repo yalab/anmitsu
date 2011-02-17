@@ -51,7 +51,11 @@
     <td><%= link_to "[#{t('Destroy')}]", [@item, account], :method => :delete, :remote => true %></td>
   </tr>
   <% end -%>
+  <tr id="total_row">
+    <th><%= t 'Sub total' %></th>
+    <td style="text-align: right;"><%= number_to_currency(@item.total) %></td>
+    <td>&nbsp;</td>
+  </tr>
 </table>
 <% end -%>
-<%#= link_to t('Edit'),  %>
 
