@@ -122,6 +122,7 @@ ja:
       precision: 3
 
     currency:
+      unit: "円"
       format:
         format: "%n%u"
         unit: "円"

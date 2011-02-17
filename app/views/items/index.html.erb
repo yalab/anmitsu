@@ -6,7 +6,7 @@
     <div class="post-content">
     <p><%= item.description %></p>
     <p><%= item.note %></p>
-    <p style="text-align: right;">合計: <%= number_to_currency(item.total_with_tax) %>(<%= t 'tax-inclusive pricing' %>)</p>
+    <p style="text-align: right;"><%= t 'Total' %>: <%= number_to_currency(item.total_with_tax) %>(<%= t 'tax-inclusive pricing' %>)</p>
     </div>
     <p style="text-align: right;">
     <%= link_to "[#{t('Edit details')}]", item %>&nbsp;

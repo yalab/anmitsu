@@ -1,4 +1,5 @@
 class Account
+  include ActionView::Helpers::NumberHelper
   include Mongoid::Document
   field(:content, :type => String)  || validates(:content, :presence => true)
   field(:price,   :type => Integer) || validates(:price,   :presence => true, :numericality => {:only_integer => true})
@@ -8,8 +9,10 @@ class Account
 
   def serializable_hash(*args)
     hash = super
-    hash[:item_total] = item.total
-    hash[:item_total_with_tax] = item.total_with_tax
+    hash[:item_total] = number_with_delimiter(item.total)
+    hash[:item_total_with_tax] = number_with_delimiter(item.total_with_tax)
+    hash[:price] = number_with_delimiter(price)
+    hash[:unit] = I18n.t('number.currency.unit')
     hash
   end
 end

@@ -8,10 +8,12 @@ class AccountsControllerTest < ActionController::TestCase
   end
 
   context "create action" do
-    should "redirect when model is valid" do
+    should "success when model is valid" do
       Account.any_instance.stubs(:valid?).returns(true)
-      post :create, :format => 'json', :item_id => @item.id
+      price = 3000
+      post :create, :format => 'json', :item_id => @item.id, :account => {:price => price, :content => 'foobar'}
       assert_response :success
+      assert_equal "3,000", ActiveSupport::JSON.decode(response.body)['price']
     end
   end
 

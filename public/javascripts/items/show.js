@@ -13,12 +13,20 @@ $(function(){
                 $("#account_submit").attr('disabled', '');
                 var tr = $(document.createElement('tr'));
                 tr.attr('id', 'account_' + account._id);
+                var price_fields = ['total', 'total_with_tax'];
+                var n;
+                for(n = 0; n< price_fields.length; n++){
+                  var k = price_fields[n];
+                  $("#" + k).html(account['item_' + k] + account['unit']);
+                }
+                
                 var fields = ['content', 'price'];
-                for(var n = 0; n < fields.length; n++){
+                for(n = 0; n < fields.length; n++){
                   var td = $(document.createElement('td'));
                   var k = fields[n];
                   if(k == 'price'){
                     td.css('text-align', 'right');
+                    account[k] = account[k] + account['unit'];
                   }
                   td.html(account[k]);
                   tr.append(td);
@@ -32,10 +40,6 @@ $(function(){
                            'rel'        : "nofollow"});
                 link.html("[削除]");
                 link.bind('ajax:success', delete_success);
-                link.click(function(e){
-                  $(this).callRemote();
-                  e.preventDefault();
-                });
                 td.append(link);
                 tr.append(td);
                 $("#total_row").before(tr);
@@ -54,7 +58,22 @@ $(function(){
              });
       return false;
     });
-  var delete_success = function(){
+  var delete_success = function(data, response_body){
+    var account;
+    try{
+      eval("account = " + response_body);
+    } catch (x) {
+      alert("Errror " + x);
+      return;
+    }
+    var fields = ['total', 'total_with_tax'];
+    for(var n=0; n < fields.length; n++){
+      var k = fields[n];
+      if(account){
+        $("#" + k).html(account['item_' + k] + account['unit']);
+      }
+    }
+    
     var id = this.href.split('/').pop();
     var node = $("#account_"+ id);
     node.fadeOut('slow', function(){ node.remove(); });

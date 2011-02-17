@@ -19,6 +19,10 @@
   <b><%= t 'Note' %>:</b>
   <div class="indent"><%=nl2br @item.note %></div>
 </p>
+<p>
+  <b><%= t 'Total' %>: </b>
+  <span id="total_with_tax"><%= number_to_currency(@item.total_with_tax) %></span>(<%= t 'tax-inclusive pricing' %>)
+</p>
 <p style="text-align: right;">
   <b><%= t 'State' %>:</b>
   <%= t @item.state %>
@@ -57,7 +61,7 @@
   <% end -%>
   <tr id="total_row">
     <th><%= t 'Sub total' %></th>
-    <td style="text-align: right;"><%= number_to_currency(@item.total) %></td>
+    <td style="text-align: right;" id="total"><%= number_to_currency(@item.total) %></td>
     <td>&nbsp;</td>
   </tr>
 </table>
