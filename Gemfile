@@ -12,7 +12,7 @@ gem 'will_paginate', '3.0.pre2'
 group :development, :test do
   gem 'shoulda'
   gem 'shoulda-activemodel'
-  gem 'factory_girl'
+  gem 'factory_girl', '2.0.0.beta2'
   gem 'faker'
   gem 'rails3-generators'
   gem 'mocha'

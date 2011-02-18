@@ -1,6 +1,8 @@
-Factory.define :bank_account do |f|
-  f.bank_name "An City Bank"
-  f.branch_name "Osaka"
-  f.name "yalab"
-  f.code "0123-123-12-1"
+FactoryGirl.define do
+  factory :bank_account do
+    bank_name "An City Bank"
+    branch_name "Osaka"
+    name "yalab"
+    code "0123-123-12-1"
+  end
 end
