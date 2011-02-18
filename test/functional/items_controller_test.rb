@@ -52,7 +52,7 @@ class ItemsControllerTest < ActionController::TestCase
         assert_redirected_to items_path
       end
       should "display alert message" do
-        assert_equal 'Failed to delete', flash[:alert]
+        assert_equal 'Failed to create', flash[:alert]
       end
     end
   end

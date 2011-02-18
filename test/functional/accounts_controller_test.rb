@@ -29,7 +29,6 @@ class AccountsControllerTest < ActionController::TestCase
       should "not destroy model and response is failure" do
         assert_difference "@item.accounts.length", 0 do
           delete :destroy, :id => 1, :format => 'json', :item_id => @item.id
-          @item.reload
           assert_response 422
         end
       end

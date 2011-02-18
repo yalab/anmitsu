@@ -10,7 +10,7 @@ class AccountsController < ApplicationController
   def destroy
     @account = item.accounts.find(params[:id])
     status = (@account && @account.destroy) ? :ok : :unprocessable_entity
-    respond_to{|f| f.json{ render :json => @account } }
+    respond_to{|f| f.json{ render :json => @account, :status => status } }
   end
 
   private
