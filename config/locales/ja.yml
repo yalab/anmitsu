@@ -202,8 +202,7 @@ ja:
       over_x_years:
         one:   "%{count}年以上"
         other: "%{count}年以上"
-
-  activemodel:
+  activemodel: &activemodel
     attributes:
       user:
         email: *email
@@ -261,6 +260,7 @@ ja:
 
       full_messages:
         format: "%{attribute}%{message}"
+  mongoid: *activemodel
   helpers:
     submit:
       create: "登録"
