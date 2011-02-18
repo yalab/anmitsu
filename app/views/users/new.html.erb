@@ -9,7 +9,14 @@
 
   <p><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></p>
-
+  <br>
+  <h4><%= t 'TOS' %></h4>
+  <div id="tos_area">
+    <%= render 'layouts/tos' %>
+  </div>
+  <div id="tos_notice">
+  <%= t 'By clicking on "Sign up" below, you are agreeing to the Terms of Service above' %>
+  </div>
   <p><%= f.submit t("Sign up") %></p>
 <% end %>
 

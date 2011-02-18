@@ -13,3 +13,14 @@
   border-top: 1px dotted #000000;
   font-weight: bold;
 }
+#tos li{
+  margin-left: 30px;
+}
+#tos_area{
+  overflow: scroll;
+  height: 120px;
+}
+#tos_notice{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

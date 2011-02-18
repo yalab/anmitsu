@@ -1,4 +1,6 @@
 Anmitsu::Application.routes.draw do
+  get :tos, :to => "root#tos"
+  get :contact, :to => "root#contact"
   resources :information, :only => [:edit, :update]
   resources :accounts, :only => [:show]
   resources :items do

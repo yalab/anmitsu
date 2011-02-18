@@ -19,9 +19,11 @@ ja:
   Bank account code: &bank_account_code
                      口座番号
   Bill: 請求書
+  'By clicking on "Sign up" below, you are agreeing to the Terms of Service above':  下の「新規登録」をクリックすることで、あなたは上記の利用規約に同意します。
   Change your password: パスワード変更
   Client name: &client_name
                顧客名
+  Contact: 問い合わせ
   Content: &content
            内容
   Corporate name or trade name: &corporate_name_or_trade_name
@@ -91,6 +93,7 @@ ja:
   Sub total: 小計
   tax-inclusive pricing: 税込
   Token is over expire: 変更期限が過ぎています。もう一度「パスワードを忘れた場合」をやり直してください
+  TOS: 利用規約
   Tel: &tel
        電話番号
   Title: &title
