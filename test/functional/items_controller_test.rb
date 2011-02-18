@@ -2,9 +2,10 @@ require 'test_helper'
 
 class ItemsControllerTest < ActionController::TestCase
   setup do
-    (@user = Factory(:user)).confirm!
+    @item = Factory(:item)
+    @user = @item.user
+    @user.confirm!
     sign_in @user
-    @item = @user.items.first
   end
 
   test "should get index" do

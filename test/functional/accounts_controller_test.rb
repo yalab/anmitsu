@@ -2,9 +2,11 @@ require 'test_helper'
 
 class AccountsControllerTest < ActionController::TestCase
   setup do
-    (@user = Factory(:user)).confirm!
+    @account = FactoryGirl.create(:account)
+    @item = @account.item
+    @user = @item.user
+    @user.confirm!
     sign_in @user
-    @item = @user.items.first
   end
 
   context "create action" do
@@ -20,16 +22,17 @@ class AccountsControllerTest < ActionController::TestCase
   context "destroy action" do
     should "destroy model and response is ok" do
       assert_difference "@item.accounts.length", -1 do
-        delete :destroy, :id => @item.accounts.first.id, :format => 'json', :item_id => @item.id
-        @item.reload
+        delete :destroy, :id => @account.to_param, :format => 'json', :item_id => @item.id
         assert_response :success
+        @item.reload
       end
     end
     context "without not embeded id" do
       should "not destroy model and response is failure" do
         assert_difference "@item.accounts.length", 0 do
-          delete :destroy, :id => 1, :format => 'json', :item_id => @item.id
-          assert_response 422
+          assert_raise(Mongoid::Errors::DocumentNotFound){
+            delete :destroy, :id => 1, :format => 'json', :item_id => @item.id
+          }
         end
       end
     end

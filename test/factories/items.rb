@@ -4,6 +4,7 @@ FactoryGirl.define do
     description "Create your CMS"
     note "note"
     client_name "yalab"
+    association :user, :factory => :user
     after_build{|e| FactoryGirl.create(:account, :item => e) }
   end
 end
