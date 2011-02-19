@@ -13,8 +13,7 @@
     <p style="text-align: right;"><%= t 'Last update' %>:&nbsp;<%= item.updated_at.strftime("%F") %></p>
     </div>
     <p style="text-align: right;">
-    <%= link_to "[#{t('Edit details')}]", item %>&nbsp;
-    <%= link_to "[#{t('PDF download')}]", item_path(item, :format => 'pdf') %>&nbsp;
+    <%= link_to "[#{t('Edit details')}]", item %>
     </p>
   </tr>
   </div>

@@ -53,12 +53,14 @@
     <td><%= f.text_field :price, :size => 8 %></td>
     <td><%= f.submit %></td>
   </tr>
+
   <% @item.accounts.each do |account| -%>
-  <tr id="account_<%= account.id %>">
-    <td><%= account.content %></td>
-    <td style="text-align: right;"><%= number_to_currency(account.price) %></td>
-    <td><%= link_to "[#{t('Destroy')}]", [@item, account], :method => :delete, :remote => true %></td>
-  </tr>
+    <% next if account.new_record? %>
+    <tr id="account_<%= account.id %>">
+      <td><%= account.content %></td>
+      <td style="text-align: right;"><%= number_to_currency(account.price) %></td>
+      <td><%= link_to "[#{t('Destroy')}]", [@item, account], :method => :delete, :remote => true %></td>
+    </tr>
   <% end -%>
   <tr id="total_row">
     <th><%= t 'Sub total' %></th>
