@@ -8,6 +8,7 @@ gem 'devise'
 gem 'stateflow'
 gem 'pdfkit'
 gem 'will_paginate', '3.0.pre2'
+gem "jquery-rails"
 
 group :development, :test do
   gem 'shoulda'
