@@ -24,6 +24,7 @@
     #user{
       float: right;
       margin-right: 30px;
+      margin-top: 50px;
     }
     #user th{
       text-align: left;
@@ -130,9 +131,13 @@
       <td class="item_price"><%= number_to_currency(account.price) %></td>
     </tr>
   <% end -%>
+  <tr>
+    <td class="item_content"><%= t 'Tax' %></td>
+    <td class="item_price"><%= number_to_currency @item.tax %></td>
+  </tr>
   <tr id="total">
-    <th><%= t 'Sub total' %></th>
-    <td><%= number_to_currency @item.total %></td>
+    <th><%= t 'Total' %></th>
+    <td><%= number_to_currency @item.total_with_tax %></td>
   </tr>
 </table>
 

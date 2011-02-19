@@ -13,13 +13,8 @@ $(function(){
                 $("#account_submit").attr('disabled', '');
                 var tr = $(document.createElement('tr'));
                 tr.attr('id', 'account_' + account._id);
-                var price_fields = ['total', 'total_with_tax'];
-                var n;
-                for(n = 0; n< price_fields.length; n++){
-                  var k = price_fields[n];
-                  $("#" + k).html(account['item_' + k] + account['unit']);
-                }
-                
+                $("#tax").html(account['item_tax'] + account['unit']);
+                $(".total_with_tax").html(account['item_total_with_tax'] + account['unit']);
                 var fields = ['content', 'price'];
                 for(n = 0; n < fields.length; n++){
                   var td = $(document.createElement('td'));
@@ -42,7 +37,7 @@ $(function(){
                 link.bind('ajax:success', delete_success);
                 td.append(link);
                 tr.append(td);
-                $("#total_row").before(tr);
+                $("#tax_row").before(tr);
                 tr.hide();
                 tr.fadeIn('slow');
               },
@@ -66,14 +61,8 @@ $(function(){
       alert("Errror " + x);
       return;
     }
-    var fields = ['total', 'total_with_tax'];
-    for(var n=0; n < fields.length; n++){
-      var k = fields[n];
-      if(account){
-        $("#" + k).html(account['item_' + k] + account['unit']);
-      }
-    }
-    
+    $("#tax").html(account['item_tax'] + account['unit']);
+    $(".total_with_tax").html(account['item_total_with_tax'] + account['unit']);
     var id = this.href.split('/').pop();
     var node = $("#account_"+ id);
     node.fadeOut('slow', function(){ node.remove(); });

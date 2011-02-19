@@ -97,6 +97,7 @@ ja:
          状態
   State: *state
   Sub total: 小計
+  Tax: 消費税
   tax-inclusive pricing: 税込
   Token is over expire: 変更期限が過ぎています。もう一度「パスワードを忘れた場合」をやり直してください
   TOS: 利用規約

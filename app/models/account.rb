@@ -11,6 +11,7 @@ class Account
     hash = super
     hash[:item_total] = number_with_delimiter(item.total)
     hash[:item_total_with_tax] = number_with_delimiter(item.total_with_tax)
+    hash[:item_tax] = number_with_delimiter(item.tax)
     hash[:price] = number_with_delimiter(price)
     hash[:unit] = I18n.t('number.currency.unit')
     hash
