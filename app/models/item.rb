@@ -18,7 +18,12 @@ class Item
     @total ||= (accounts.length > 0) ? accounts.map(&:price).inject(:+) : 0
   end
 
+
+  def tax
+    @tax ||= total * TAX / 100
+  end
+
   def total_with_tax
-    @totel ||= ((total * (100 + TAX)) / 100).truncate
+    @totel ||= tax + total
   end
 end
