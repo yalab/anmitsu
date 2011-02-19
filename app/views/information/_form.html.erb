@@ -41,6 +41,10 @@
       <%= f.text_field :name %>
     </div>
     <div class="field">
+      <%= f.label :type %><br>
+      <%= f.select :type, BankAccount::TYPE.map{|type| [I18n.t("bank_type.#{type}"), type] }%>
+    </div>
+    <div class="field">
       <%= f.label :code %><br />
       <%= f.text_field :code %>
     </div>

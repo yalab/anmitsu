@@ -3,11 +3,15 @@
 # AR error messages are basically taken from Ruby-GetText-Package. Thanks to Masao Mutoh.
 
 ja:
+  bank_type:
+    normal: 普通
+    current: 当座
   Address: &address
            住所
   'Are you sure you want to delete this item?': この案件を削除してもよろしいですか？
   'Are you sure item state change?': 状態を変更してもよろしいですか？
   An estimate: 見積書
+  Back: 戻る
   Back to list: 一覧に戻る
   Back to top: TOPへ戻る
   Bank name: &bank_name
@@ -18,6 +22,8 @@ ja:
                      口座名義
   Bank account code: &bank_account_code
                      口座番号
+  Bank accounnt type: &bank_account_type
+                      預金種別
   Bill: 請求書
   'By clicking on "Sign up" below, you are agreeing to the Terms of Service above':  下の「新規登録」をクリックすることで、あなたは上記の利用規約に同意します。
   Change your password: パスワード変更
@@ -28,7 +34,7 @@ ja:
            内容
   Corporate name or trade name: &corporate_name_or_trade_name
                                 法人名、屋号
-  delivery: 納品
+  delivery: 請求
   Description: &description
                説明
   Destroy: 削除
@@ -62,7 +68,7 @@ ja:
   Next page: 次へ
   Note: &note
         備考
-  order: 受注
+  order: 受注済
   PDF download: PDFダウンロード
   Password: &password
             パスワード
@@ -75,7 +81,7 @@ ja:
   Previous page: 前へ
   Price: &price
          価格
-  receipt: 入金
+  receipt: 入金済
   Recipient: 振込先
   Remember me: &remember_me
                ログインを記憶する
@@ -228,6 +234,7 @@ ja:
         branch_name: *branch_name
         name: *bank_account_name
         code: *bank_account_code
+        type: *bank_account_type
     errors:
       template:
         header:
@@ -236,30 +243,30 @@ ja:
         body: "次の項目を確認してください。"
 
       messages:
-        inclusion: "一覧にありません。"
-        exclusion: "予約されています。"
-        invalid: "不正な値です。"
-        confirmation: "一致しません。"
-        accepted: "受諾してください。"
-        empty: "入力してください。"
-        blank: "入力してください。"
-        too_long: "%{count}文字以内で入力してください。"
-        too_short: "%{count}文字以上で入力してください。"
-        wrong_length: "%{count}文字で入力してください。"
-        taken: "すでに存在します。"
-        not_a_number: "数値で入力してください。"
-        not_an_integer: "整数で入力してください。"
-        greater_than: "%{count}より大きい値にしてください。"
-        greater_than_or_equal_to: "%{count}以上の値にしてください。"
-        equal_to: "%{count}にしてください。"
-        less_than: "%{count}より小さい値にしてください。"
-        less_than_or_equal_to: "%{count}以下の値にしてください。"
-        odd: "奇数にしてください。"
-        even: "偶数にしてください。"
-        record_invalid: "バリデーションに失敗しました。 %{errors}"
+        inclusion: "%{attribute}は一覧にありません。"
+        exclusion: "%{attribute}は予約されています。"
+        invalid: "%{attribute}は不正な値です。"
+        confirmation: "%{attribute}が一致しません。"
+        accepted: "%{attribute}を受諾してください。"
+        empty: "%{attribute}を入力してください。"
+        blank: "%{attribute}を入力してください。"
+        too_long: "%{attribute}を%{count}文字以内で入力してください。"
+        too_short: "%{attribute}を%{count}文字以上で入力してください。"
+        wrong_length: "%{attribute}を%{count}文字で入力してください。"
+        taken: "%{attribute}はすでに存在します。"
+        not_a_number: "%{attribute}を数値で入力してください。"
+        not_an_integer: "%{attribute}を整数で入力してください。"
+        greater_than: "%{attribute}を%{count}より大きい値にしてください。"
+        greater_than_or_equal_to: "%{attribute}を%{count}以上の値にしてください。"
+        equal_to: "%{attribute}を%{count}にしてください。"
+        less_than: "%{attribute}を%{count}より小さい値にしてください。"
+        less_than_or_equal_to: "%{attribute}を%{count}以下の値にしてください。"
+        odd: "%{attribute}を奇数にしてください。"
+        even: "%{attribute}を偶数にしてください。"
+        record_invalid: "%{attribute}はバリデーションに失敗しました。 %{errors}"
 
       full_messages:
-        format: "%{attribute}%{message}"
+        format: "%{message}"
   mongoid: *activemodel
   helpers:
     submit:
