@@ -53,14 +53,7 @@ $(function(){
              });
       return false;
     });
-  var delete_success = function(data, response_body){
-    var account;
-    try{
-      eval("account = " + response_body);
-    } catch (x) {
-      alert("Errror " + x);
-      return;
-    }
+  var delete_success = function(data, account){
     $("#tax").html(account['item_tax'] + account['unit']);
     $(".total_with_tax").html(account['item_total_with_tax'] + account['unit']);
     var id = this.href.split('/').pop();

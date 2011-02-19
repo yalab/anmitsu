@@ -21,7 +21,7 @@
 </p>
 <p>
   <b><%= t 'Total' %>: </b>
-  <span id="total_with_tax"><%= number_to_currency(@item.total_with_tax) %></span>(<%= t 'tax-inclusive pricing' %>)
+  <span class="total_with_tax"><%= number_to_currency(@item.total_with_tax) %></span>(<%= t 'tax-inclusive pricing' %>)
 </p>
 <%= form_for(@item) do |f| %>
 <p style="text-align: right;">
@@ -69,7 +69,7 @@
   </tr>
   <tr id="total_row">
     <th><%= t 'Total' %></th>
-    <td style="text-align: right;" id="total"><%= number_to_currency(@item.total_with_tax) %></td>
+    <td style="text-align: right;" class="total_with_tax"><%= number_to_currency(@item.total_with_tax) %></td>
     <td>&nbsp;</td>
   </tr>
 </table>
