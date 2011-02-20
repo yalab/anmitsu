@@ -8,7 +8,7 @@ require "rails/test_unit/railtie"
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Anmitsu
-  Email = {:info => 'info@anmitsu.org'}
+  Email = {:info => 'anmitsu64@gmail.com'}
   class Application < Rails::Application
     config.time_zone = 'Osaka'
     config.i18n.default_locale = :ja
