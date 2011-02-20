@@ -1,0 +1,5 @@
+<p style="text-align: right;">
+<% Item.machine.states.keys.reverse.each do |state| %>
+  <div class="<%= state %>" style="float: right; width: 42px; line-height: 1.2em;"><%= I18n.t(state) %></div>
+<% end %>
+</p>

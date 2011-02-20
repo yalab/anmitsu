@@ -3,7 +3,7 @@
 <% @items.each do |item| -%>
   <div class="post">
     <div class="post-head">
-      <h4><%= item.title %>(<%= item.client_name %>)</h4>
+      <h4 class="<%= item.state %>"><%= item.title %>(<%= item.client_name %>)</h4>
       
     </div>
     <div class="post-content">
@@ -19,5 +19,6 @@
   </div>
 <% end -%>
 </table>
+<%= render 'state_description' %>
 <%= paginate @items %>
 <br />

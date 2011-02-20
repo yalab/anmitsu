@@ -24,3 +24,19 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.estimate{
+  border-left: 3px solid #FF0000;
+  padding-left: 4px;
+}
+.order{
+  border-left: 3px solid #00FF00;
+  padding-left: 4px;
+}
+.delivery{
+  border-left: 3px solid #0000FF;
+  padding-left: 4px;
+}
+.receipt{
+  border-left: 3px solid #FF00FF;
+  padding-left: 4px;
+}
