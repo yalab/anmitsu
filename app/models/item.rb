@@ -18,7 +18,7 @@ class Item
   validates :title, :presence => true
 
   stateflow do
-    state :estimate, :order, :delivery, :receipt
+    state :estimate, :order, :delivery, :receipt, :reject
     all_state = states.keys
     initial :estimate
     {:order    => :ordered_at,
@@ -36,7 +36,6 @@ class Item
   def total
     @total ||= (accounts.length > 0) ? accounts.map(&:price).inject(:+) : 0
   end
-
 
   def tax
     @tax ||= total * TAX / 100

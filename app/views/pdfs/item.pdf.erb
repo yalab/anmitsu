@@ -83,12 +83,12 @@
     <%= t 'Bill' %>
   <% end -%>
 </h1>
-<p id="last_update"><%= t 'Last update' %>: <%= @item.updated_at.strftime("%Y年%m月%d日") %></p>
+<p id="last_update"><%= @item.updated_at.strftime("%Y年%m月%d日") %></p>
 
 <div id="summary">
   <p><%= @item.client_name %>御中</p>
   <p><%= @item.title %></p>
-  <p id="total_with_tax"><%= t 'Total' %> <%= number_to_currency(@item.total_with_tax) %>(<%= t 'tax-inclusive pricing' %>)</p>
+  <p id="total_with_tax" style="font-size: large;"><%= t 'Total' %> <%= number_to_currency(@item.total_with_tax) %>(<%= t 'tax-inclusive pricing' %>)</p>
 </div>
 
 <div id="user">
@@ -112,7 +112,7 @@
     <h2><%= t 'Recipient' %></h2>
     <table>
       <tr><th><%= t 'Bank name' %></th><td><%= bank_account.bank_name %></td></tr>
-      <tr><th><%= t 'Branch name' %></th><td><%= bank_account.branch_name %></td></tr>
+      <tr><th><%= t 'Branch name' %></th><td><%= bank_account.branch_name %><% if bank_account.branch_number && bank_account.branch_number.length > 0 %>(<%= t 'Branch number' %>: <%= bank_account.branch_number %>)<% end %></td></tr>
       <tr><th><%= t 'Bank account name' %></th><td><%= bank_account.name %></td></tr>
       <tr><th><%= t 'Bank account code' %></th><td><%= bank_account.code %></td></tr>
     </table>

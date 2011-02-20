@@ -18,6 +18,8 @@ ja:
              銀行名
   Branch name: &branch_name
                支店名
+  Branch number: &branch_number
+                 店番
   Bank account name: &bank_account_name
                      口座名義
   Bank account code: &bank_account_code
@@ -84,6 +86,7 @@ ja:
          価格
   receipt: 入金済
   Recipient: 振込先
+  reject: 棄却
   Remember me: &remember_me
                ログインを記憶する
   Resend confirmation instructions: 確認メール再送信
@@ -234,6 +237,7 @@ ja:
       bank_account:
         bank_name: *bank_name
         branch_name: *branch_name
+        branch_number: *branch_number
         name: *bank_account_name
         code: *bank_account_code
         type: *bank_account_type
