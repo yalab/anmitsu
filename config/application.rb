@@ -12,7 +12,7 @@ module Anmitsu
   class Application < Rails::Application
     config.time_zone = 'Osaka'
     config.i18n.default_locale = :ja
-    config.action_view.javascript_expansions[:defaults] = %w(jquery rails application)
+    config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
     config.encoding = "utf-8"
     config.filter_parameters += [:password, :password_confirmation]
     config.generators do |g|

@@ -7,4 +7,8 @@ class User
   after_create do
     create_information && create_bank_account
   end
+
+  def beginner?
+    information.name.nil? || information.name.length < 1
+  end
 end
