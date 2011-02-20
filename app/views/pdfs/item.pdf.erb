@@ -4,7 +4,14 @@
   <title><%= @item.title %></title>
   <meta charset="UTF-8">
   <style type="text/css">
+    @charset "UTF-8";
+    @font-face{
+      font-family: 'VL Gothic';
+      src : url(<%= url_for("http://#{request.host}:#{request.port}/VL-Gothic-Regular.ttf")%>) format( "truetype" );
+    }
+
     body{
+      font-family: 'VL Gothic';
       margin-left: 30xp;
       margin-right: 30px;
     }
