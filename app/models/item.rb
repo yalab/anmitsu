@@ -3,15 +3,34 @@ class Item
   include Mongoid::Timestamps
   include Stateflow
   TAX = 5
-  [:title, :description, :note, :client_name, :state].each{|name| field name, :type => String }
-  [:created_at].each{|name| field name, :type => Time }
+  field :title,         :type => String
+  field :description,   :type => String
+  field :note,          :type => String
+  field :client_name,   :type => String
+  field :state,         :type => String
+  field :estimated_at,  :type => Time, :default => Time.now
+  field :ordered_at,    :type => Time
+  field :deliveried_at, :type => Time
+  field :receipted_at,  :type => Time
+  field :created_at,    :type => Time
   referenced_in :user
   embeds_many :accounts
   validates :title, :presence => true
 
   stateflow do
     state :estimate, :order, :delivery, :receipt
+    all_state = states.keys
     initial :estimate
+    {:order    => :ordered_at,
+     :delivery => :deliveried_at,
+     :receipt  => :receipted_at}.each do |st, time|
+      state st do
+        enter lambda{|i| i.send("#{time}=", Time.now) }
+      end
+      event st do
+        transitions :from => all_state - [st], :to => st
+      end
+    end
   end
 
   def total

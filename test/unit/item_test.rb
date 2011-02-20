@@ -18,4 +18,18 @@ class ItemTest < ActiveSupport::TestCase
       assert_equal tax + @price, @item.total_with_tax
     end
   end
+
+  context "state change" do
+    should "enter record time" do
+      assert @item.estimated_at
+      {:order    => :ordered_at,
+       :delivery => :deliveried_at,
+       :receipt  => :receipted_at}.each do |method, field|
+        assert_equal nil, @item.send(field)
+        @item.send("#{method}!")
+        assert @item.send(field)
+      end
+
+    end
+  end
 end

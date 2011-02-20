@@ -33,7 +33,9 @@
   <div style="float: left;"><%= link_to "[#{t("Destroy")}]", @item, :method => :delete, :confirm => t('Are you sure you want to delete this item?') %></div>
   <div style="float: right; text-align: right;">
     <%= link_to "[#{t("Edit base info")}]", edit_item_path(@item) %>&nbsp;
-    <%= link_to "[#{t('PDF download')}]", item_path(@item, :format => 'pdf') %>&nbsp;</div>
+    <% if @item.estimate? || @item.delivery? %>
+      <%= link_to "[#{t('PDF download')}]", item_path(@item, :format => 'pdf') %><% end %>
+  </div>
   <div style="clear: both;"></div>
 </div>
 
