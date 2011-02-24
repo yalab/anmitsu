@@ -7,7 +7,7 @@
     @charset "UTF-8";
     @font-face{
       font-family: 'VL Gothic';
-      src : url(<%= url_for("http://#{request.host}:#{request.port}/stylesheets/VL-Gothic-Regular.ttf")%>) format( "truetype" );
+      src : url(<%= "#{Rails.root}/public/stylesheets/VL-Gothic-Regular.ttf" %>) format( "truetype" );
     }
 
     body{
