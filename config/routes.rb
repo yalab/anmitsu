@@ -1,15 +1,23 @@
 Anmitsu::Application.routes.draw do
+  class ForceSSL
+    def self.matches?(request)
+      request.ssl?
+    end
+  end
+
   get :tos, :to => "root#tos"
   get :contact, :to => "root#contact"
-  resources :information, :only => [:edit, :update]
-  resources :accounts, :only => [:show]
-  resources :items do
-    resources :accounts, :only => [:create, :destroy]
-  end
   root :to => "root#index"
-  devise_for :users, :controllers => {:sessions => 'users/sessions', :registrations => 'users'} do
-    namespace :users do
-      get :registered
+  scope :constraints => ForceSSL do
+    resources :information, :only => [:edit, :update]
+    resources :accounts, :only => [:show]
+    resources :items do
+      resources :accounts, :only => [:create, :destroy]
+    end
+    devise_for :users, :controllers => {:sessions => 'users/sessions', :registrations => 'users'} do
+      namespace :users do
+        get :registered
+      end
     end
   end
 
