@@ -3,7 +3,7 @@
 Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
-  config.mailer_sender = Anmitsu::Email[:info]
+  config.mailer_sender = "do-not-reply@anmitsu.yalab.org"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
@@ -139,4 +139,7 @@ Devise.setup do |config|
   #   end
   #   manager.default_strategies(:scope => :user).unshift :twitter_oauth
   # end
+end
+Devise::Mailer.module_eval do
+  default :charset => 'iso-2022-jp'
 end
