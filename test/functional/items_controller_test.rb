@@ -77,6 +77,20 @@ class ItemsControllerTest < ActionController::TestCase
         assert_response :success
       end
     end
+
+    context "new users's item" do
+      setup do
+        pass = 'password'
+        user = User.create(:email => Faker::Internet.email, :password => pass, :password_confirmation => pass)
+        user.confirm!
+        sign_in(user)
+        item = user.items.create(:title => 'hogehoge')
+        get :show, :id => item.to_param, :format => :pdf
+      end
+      should "success" do
+        assert_response :success
+      end
+    end
   end
 
   context "on PUT :update" do

@@ -104,7 +104,7 @@
     <tr><th><%= t 'Name' %></th><td><%= information.name %></td></tr>
     <tr><th><%= t 'Address' %></th><td><%= information.address %></td></tr>
     <tr><th><%= t 'Tel' %></th><td><%= information.tel %></td></tr>
-    <% if information.fax.length > 0 %><tr><th><%= t 'Fax' %></th><td><%= information.fax %></td></tr><% end %>
+    <% if information.fax && information.fax.length > 0 %><tr><th><%= t 'Fax' %></th><td><%= information.fax %></td></tr><% end %>
   </table>
 </div>
 <div style="clear: both;"></div>
