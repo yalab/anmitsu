@@ -3,7 +3,7 @@ Anmitsuにご登録ありがとうございます。
 このメールを受信された時点ではまだ登録は確定しておりません。
 以下のリンクにアクセスし、登録を確定してください
 
-<%= confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %>
+<%= confirmation_url(@resource, :confirmation_token => @resource.confirmation_token, :protocol => 'https://') %>
 
 もしこのメールに覚えが無い場合はお手数ですが<%= Anmitsu::Email[:info] %>までご連絡ください。
 
