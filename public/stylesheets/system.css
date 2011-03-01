@@ -40,3 +40,7 @@
   border-left: 3px solid #FF00FF;
   padding-left: 4px;
 }
+.reject{
+  border-left: 3px solid #000000;
+  padding-left: 4px;
+}
