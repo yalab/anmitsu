@@ -1,7 +1,7 @@
 Anmitsu::Application.routes.draw do
   class ForceSSL
     def self.matches?(request)
-      request.ssl?
+      Rails.env != 'production' || request.ssl?
     end
   end
 
