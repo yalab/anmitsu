@@ -6,6 +6,7 @@ class ActiveSupport::TestCase
 end
 class ActionController::TestCase
   include Devise::TestHelpers
+  REG_SSL = %r|^https://|
   def flash
     f = super
     [:notice, :alert].each do |k|
