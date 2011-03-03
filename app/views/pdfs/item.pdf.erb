@@ -100,10 +100,13 @@
 
 <div id="user">
   <% information = @item.user.information %>
-  <p><%= information.name %></p>
-  <p><%= information.address %></p>
-  <p><%= information.tel %></p>
-  <% if information.fax && information.fax.length > 0 %><p><%= information.fax %></p><% end %>
+  <p>
+    <%= information.name %><br>
+    <%= information.address %><br>
+    <%= information.tel %><br>
+    <% if information.fax && information.fax.length > 0 -%>
+      <%= information.fax %><br>
+    <% end -%>
 </div>
 <div style="clear: both;"></div>
 <% if @item.estimate? -%>
@@ -115,8 +118,15 @@
   <div id="bank">
     <% bank_account = @item.user.bank_account %>
     <h2><%= t 'Recipient' %></h2>
-    <p><%= bank_account.bank_name %>&nbsp;<%= bank_account.branch_name %><% if bank_account.branch_number && bank_account.branch_number.length > 0 %>(<%= t 'Branch number' %>: <%= bank_account.branch_number %>)<% end %></p>
-    <p>(<%= t("bank_type.#{bank_account.type}") %>)&nbsp;<%= bank_account.code %>&nbsp;<%= bank_account.name %></p>
+    <p>
+      <%= bank_account.bank_name %>&nbsp;
+      <%= bank_account.branch_name %>
+      <% if bank_account.branch_number && bank_account.branch_number.length > 0 -%>
+        (<%= t 'Branch number' %>: <%= bank_account.branch_number %>)
+      <% end -%><br>
+      (<%= t("bank_type.#{bank_account.type}") %>)&nbsp;
+      <%= bank_account.code %>&nbsp;<%= bank_account.name %>
+    </p>
   </div>
 <% end -%>
 <div style="clear: both;"></div>
