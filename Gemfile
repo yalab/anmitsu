@@ -7,7 +7,7 @@ gem 'capistrano'
 gem 'devise'
 gem 'stateflow'
 gem 'pdfkit'
-gem 'will_paginate', '3.0.pre2'
+gem 'kaminari'
 gem "jquery-rails"
 
 group :development, :test do

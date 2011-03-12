@@ -288,3 +288,7 @@ ja:
       destroy:
         notice: "{resource_name}を削除しました"
         alert: "{resource_name}の削除に失敗しました"
+  views:
+    pagination:
+      previous: 前のページ
+      next: 次のページ
