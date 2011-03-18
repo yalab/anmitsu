@@ -30,6 +30,7 @@ GEM
     activesupport (3.0.4)
     arel (2.0.8)
     bcrypt-ruby (2.1.4)
+    bsearch (1.5.0)
     bson (1.2.2)
     bson_ext (1.2.2)
     builder (2.1.2)
@@ -60,6 +61,9 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    migemo-lib (0.4.2)
+      bsearch (>= 1.5.0)
+      romkan (>= 0.4.0)
     mime-types (1.16)
     mocha (0.9.12)
     mongo (1.2.2)
@@ -99,6 +103,7 @@ GEM
       rake (>= 0.8.7)
       thor (~> 0.14.4)
     rake (0.8.7)
+    romkan (0.4.0)
     shoulda (2.11.3)
     shoulda-activemodel (0.0.2)
       shoulda (>= 2.11.0)
@@ -125,6 +130,7 @@ DEPENDENCIES
   faker
   jquery-rails
   kaminari
+  migemo-lib
   mocha
   mongoid (= 2.0.0.rc.7)
   pdfkit

@@ -9,6 +9,7 @@ gem 'stateflow'
 gem 'pdfkit'
 gem 'kaminari'
 gem "jquery-rails"
+gem "migemo-lib"
 
 group :development, :test do
   gem 'shoulda'
