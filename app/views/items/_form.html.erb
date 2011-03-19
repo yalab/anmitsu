@@ -1,3 +1,4 @@
+<% @javascripts << 'items/form' %>
 <%= form_for(@item) do |f| %>
   <div class="field">
     <%= f.label :title %><br />
@@ -7,6 +8,7 @@
   <div class="field">
     <%= f.label :client_name %><br />
     <%= f.text_field :client_name %>
+    <ul id="client_name_list"></ul>
   </div>
   <div class="field">
     <%= f.label :description %><br />

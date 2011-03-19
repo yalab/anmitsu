@@ -24,6 +24,17 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+#client_name_list{
+  position: fixed;
+  z-index: 2;
+}
+#client_name_list li{
+  list-style-type: none;
+  width: 466px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
 .estimate{
   border-left: 3px solid #FF0000;
   padding-left: 4px;
