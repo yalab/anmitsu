@@ -26,6 +26,10 @@ $(function(){
                $("#item_client_name").val($(this).html());
                $("#client_name_list").html('');
              });
+             $("#item_client_name").blur(function(){
+               setTimeout(function(){ $("#client_name_list").html(''); }, 200);
+             });
+
              $("#client_name_list").append(li);
            });
          });
