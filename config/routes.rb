@@ -9,6 +9,7 @@ Anmitsu::Application.routes.draw do
   get :contact, :to => "root#contact"
   root :to => "root#index"
   scope :constraints => ForceSSL do
+    resources :clients, :only => [:index]
     resources :information, :only => [:edit, :update]
     resources :accounts, :only => [:show]
     resources :items do
