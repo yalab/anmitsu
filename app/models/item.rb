@@ -2,7 +2,7 @@ class Item
   include Mongoid::Document
   include Mongoid::Timestamps
   include Stateflow
-  paginates_per 1
+  paginates_per 10
   TAX = 5
   field :title,         :type => String
   field :description,   :type => String
