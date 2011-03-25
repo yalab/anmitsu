@@ -1,23 +1,31 @@
 $(function(){
   var MigemoQuery = {
+    Cache: {
+    },
     run: function(e){
       var name = this.value;
-      var invoke_ready = 1;
-      if(!name || name.length < invoke_ready){
+      if(name.length == 0){
+        $("#client_name_list").html('');
         return;
       }
-      if (e.which != 32 &&
-          e.which != 8  &&
+      if (e.which != 8  &&
+          e.which != 32 &&
           !(65 <= e.which && e.which <= 65 + 25) &&
           !(97 <= e.which && e.which <= 97 + 25)) {
         return;
       }
-      $.get(uri.root + 'clients.json', {item: {client_name: name}},
-           MigemoQuery.refresh);
-    },
-    refresh: function(json){
-      $("#client_name_list").html('');
-      $(json).each(MigemoQuery.draw);
+
+      if(MigemoQuery.Cache[name]){
+        $("#client_name_list").html('');
+        $(MigemoQuery.Cache[name]).each(MigemoQuery.draw);
+      }else{
+        $.get(uri.root + 'clients.json', {item: {client_name: name}},
+           function(json){
+             MigemoQuery.Cache[name] = json;
+             $("#client_name_list").html('');
+             $(json).each(MigemoQuery.draw);
+           });
+      }
     },
     draw: function(ix, name){
       var li = $(document.createElement('li'));
