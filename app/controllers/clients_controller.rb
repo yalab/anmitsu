@@ -6,7 +6,7 @@ class ClientsController < ApplicationController
             else
               Regexp.compile(name)
             end
-    @client_names = current_user.items.where(:client_name => /^(#{regex})/).map(&:client_name)
+    @client_names = current_user.items.where(:client_name => /^(#{regex})/).distinct(:client_name)
     respond_with(@client_names)
   end
 end
