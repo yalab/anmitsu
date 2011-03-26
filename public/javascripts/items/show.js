@@ -1,4 +1,4 @@
-$(function(){
+jQuery(function($){
   var post_success = function(account){
     $(":text").val('');
     $("#ajax_loader").hide();

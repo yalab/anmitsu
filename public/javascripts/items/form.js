@@ -1,15 +1,14 @@
-$(function(){
+jQuery(function($){
   var MigemoQuery = {
-    Cache: {
-    },
+    Cache: {},
     run: function(e){
       var name = this.value;
-      if(name.length == 0){
+      if(name.length === 0){
         $("#client_name_list").html('');
         return;
       }
-      if (e.which != 8  &&
-          e.which != 32 &&
+      if (e.which !== 8  &&
+          e.which !== 32 &&
           !(65 <= e.which && e.which <= 65 + 25) &&
           !(97 <= e.which && e.which <= 97 + 25)) {
         return;
@@ -43,7 +42,7 @@ $(function(){
       $(this).css("background", "#FFFFFF");
     },
     blur: function(){
-      setTimeout(function(){ $("#client_name_list").html(''); }, 200);
+      setTimeout(function(){ $("#client_name_list").html(''); }, 150);
     },
     choice: function(){
       $("#item_client_name").val($(this).html());
