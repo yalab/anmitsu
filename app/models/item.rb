@@ -18,6 +18,20 @@ class Item
   embeds_many :accounts
   validates :title, :presence => true
 
+  scope :title_or_client, lambda{|title|
+    break scoped if title.blank?
+    regexp = Regexp.compile(Regexp.quote(title))
+    any_of({:client_name => regexp}, {:title => regexp})
+  }
+
+  scope :state_is, lambda{|state|
+    (state.blank?) ? scoped : where(:state => state)
+  }
+
+  scope :client_name_like, lambda{|name|
+    (name.blank?) ? scoped : where(:client_name => Regexp.compile(Regexp.quote(name)))
+  }
+
   stateflow do
     state :estimate, :order, :delivery, :receipt, :reject
     all_state = states.keys

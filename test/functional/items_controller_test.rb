@@ -7,11 +7,57 @@ class ItemsControllerTest < ActionController::TestCase
     @user.confirm!
     sign_in @user
   end
+  context "on GET index" do
+    context "no params" do
+      setup do
+        get :index
+      end
+      should "success" do
+        assert_response :success
+      end
+      should "fetch objects" do
+        assert_not_nil assigns(:items)
+      end
+    end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:items)
+    context "search title" do
+      context "existed" do
+        setup do
+          get :index, :item => {:title => @item.title[0..1] }
+        end
+        should "fetch objects" do
+          assert assigns(:items).length > 0
+        end
+      end
+      context "not existed" do
+        setup do
+          get :index, :item => {:title => @item.title[0..1] + "@"}
+        end
+        should "fetch nothing" do
+          assert_equal 0, assigns(:items).length
+        end
+      end
+    end
+
+    context "appoint state" do
+      context "existed" do
+        setup do
+          get :index, :item => {:state => @item.state}
+        end
+        should "fetch objects" do
+          assert assigns(:items).length > 0
+        end
+      end
+      context "not existed" do
+        setup do
+          not_existed_state = Item.machine.states.keys.select{|state| state.to_s != @item.state }.sample
+          get :index, :item => {:state => not_existed_state }
+        end
+        should "fetch nothing" do
+          assert_equal 0, assigns(:items).length
+        end
+      end
+    end
   end
 
   test "should get new" do

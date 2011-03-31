@@ -1,10 +1,15 @@
 <h3><%= t('Listing items') %></h3>
 <div style="text-align: right;"><%= link_to  t('New Item'), new_item_path %></div>
+<%= form_for(@item, :html => {:method => :get})  do |f| %>
+  <%= f.text_field :title, :size => 35 %>
+  <%= f.select :state, Item.machine.states.keys.map{|state| [t(state), state] }, :include_blank => '-'  %>
+  <%= f.submit t('Search') %>
+<% end %>
+
 <% @items.each do |item| -%>
   <div class="post">
     <div class="post-head">
-      <h4 class="<%= item.state %>"><%= item.title %>(<%= item.client_name %>)</h4>
-      
+      <h4 class="<%= item.state %>"><%= item.title %>&nbsp;:&nbsp;<%= item.client_name %></h4>
     </div>
     <div class="post-content">
     <p><%= item.description %></p>

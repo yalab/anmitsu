@@ -4,7 +4,9 @@ class ItemsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    respond_with(@items = current_user.items.order_by(:created_at.desc).page(params[:page]))
+    @item = Item.new(params[:item])
+    @items = current_user.items.title_or_client(@item.title).state_is(@item.state).order_by(:created_at.desc).page(params[:page])
+    respond_with(@items)
   end
 
   def show
