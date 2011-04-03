@@ -12,7 +12,7 @@ class Users::SessionsControllerTest < ActionController::TestCase
       assert_redirected_to items_path
     end
     should "assign user" do
-      assert_equal @user.id, request.session['warden.user.user.key'].last
+      assert_equal @user.id, request.session['warden.user.user.key'][1].first
     end
   end
 end

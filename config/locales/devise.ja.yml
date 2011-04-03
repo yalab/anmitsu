@@ -4,6 +4,9 @@ ja:
       not_found: "入力したアドレスは登録されていません"
       already_confirmed: "すでに確認済みです。「ログイン」よりログインしてご利用ください"
       not_locked: "was not locked"
+      not_saved:
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"
 
   devise:
     failure:
@@ -24,9 +27,11 @@ ja:
       send_instructions: '確認メールを再送しました'
       confirmed: 'アカウントを有効にし、ログインしました'
     users:
-      signed_up: ''
-      updated: 'You updated your account successfully.'
-      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+      user:
+        signed_up: ''
+        updated: 'You updated your account successfully.'
+        destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+        inactive_signed_up: '登録確認のメールを送信しました'
     unlocks:
       send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
       unlocked: 'Your account was successfully unlocked. You are now signed in.'
