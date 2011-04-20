@@ -3,7 +3,7 @@ class UsersController < Devise::RegistrationsController
   end
 
   private
-  def sign_in_and_redirect(*args)
-    redirect_to users_registered_path
+  def after_inactive_sign_up_path_for(*args)
+    users_registered_path
   end
 end

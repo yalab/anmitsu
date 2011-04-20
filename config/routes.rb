@@ -15,7 +15,7 @@ Anmitsu::Application.routes.draw do
     resources :items do
       resources :accounts, :only => [:create, :destroy]
     end
-    devise_for :users, :controllers => {:sessions => 'users/sessions', :registrations => 'users'} do
+    devise_for :users, :controllers => {:sessions => 'users/sessions', :confirmations => 'users/confirmations', :registrations => 'users'} do
       namespace :users do
         get :registered
       end

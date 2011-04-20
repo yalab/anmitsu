@@ -18,6 +18,7 @@ class UsersControllerTest < ActionController::TestCase
         assert_difference('User.count', +1) do
           pass = 'password'
           post :create, :user => {:email => Faker::Internet.email, :password => pass, :password_confirmation => pass}
+          assert_redirected_to users_registered_url
         end
       end
     end
