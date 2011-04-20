@@ -183,6 +183,6 @@ Devise.setup do |config|
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
 end
-Devise::Mailer.module_eval do
+Devise.mailer.module_eval do
   default :charset => 'iso-2022-jp'
 end
