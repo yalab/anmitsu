@@ -21,7 +21,7 @@ ja:
       signed_in: 'ログインしました'
       signed_out: 'ログアウトしました'
     passwords:
-      send_instructions: 'パスワード再設定のURLを送信しました'
+      send_instructions: 'パスワード再設定のURLをメールで送信しました'
       updated: 'パスワードを変更し、ログインしました'
     confirmations:
       send_instructions: '確認メールを再送しました'
