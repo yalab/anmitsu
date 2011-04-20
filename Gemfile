@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.7'
-gem 'bson_ext', '~>1.2.2'
-gem 'mongoid', '~>2.0.0.rc'
+gem 'bson_ext', '~>1.3.0'
+gem 'mongoid', '~>2.0.1'
 gem 'capistrano'
 gem 'devise'
 gem 'stateflow'
