@@ -4,6 +4,15 @@ class Users::ConfirmationsControllerTest < ActionController::TestCase
   setup do
     request.env['devise.mapping'] = Devise.mappings[:user]
   end
+  context "on GET :new" do
+    setup do
+      get :new
+    end
+    should "success" do
+      assert_response :success
+    end
+  end
+
   context "on GET :show" do
     setup do
       @user = FactoryGirl.create(:user)
