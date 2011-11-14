@@ -28,7 +28,7 @@ module Anmitsu
     STRING = [MAJOR, MINOR, TINY].compact.join('.')
   end
 end
-module ActionView::Helpers::InstanceTagMethods
+class ActionView::Helpers::InstanceTag
   remove_const(:DEFAULT_FIELD_OPTIONS)
   remove_const(:DEFAULT_TEXT_AREA_OPTIONS)
   DEFAULT_FIELD_OPTIONS = {'size' => 50}.freeze
