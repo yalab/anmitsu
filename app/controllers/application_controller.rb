@@ -4,3 +4,7 @@ class ApplicationController < ActionController::Base
     @javascripts = []
   }
 end
+
+
+
+

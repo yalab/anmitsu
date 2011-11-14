@@ -54,7 +54,7 @@ ja:
   estimate: 見積り
   Failed to create: 作成に失敗しました
   Failed to delete: 削除に失敗しました
-  First step: 「設定」によりあなたの情報を登録してください
+  First step: 「設定」より情報を登録してください
   Item: &item
               見積書
   'Item was successfully updated': 案件を更新しました

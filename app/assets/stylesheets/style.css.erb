@@ -54,7 +54,7 @@ textarea {
 }
 
 html, body {
-	background: #002157 url('/images/bg.gif') left top repeat-x;
+	background: #002157 url(<%= asset_path 'bg.gif' %>) left top repeat-x;
 	color: #a6b2c4;
 	text-align: center;
 }
@@ -96,7 +96,7 @@ body {
 }
 
 .wrapCapT, #wrapCapB, #middleWrap {
-	background: transparent url('/images/middle-bg.gif') left top repeat-y;
+	background: transparent url(<%= asset_path 'middle-bg.gif' %>) left top repeat-y;
 	display: block;
 	width: 800px;
 }
@@ -168,7 +168,7 @@ html .single .post {
 }
 
 #content .date {
-	background: #002156 url('/images/date-bg.gif') left top no-repeat;
+	background: #002156 url(<%= asset_path 'date-bg.gif' %>) left top no-repeat;
 	color: #fff;
 	display: block;
 	float: left;
@@ -215,7 +215,7 @@ html .single .post {
 }
 
 #content .post-opts .comments a {
-	background: transparent url('/images/ico_comment.gif') left 50% no-repeat;
+	background: transparent url(<%= asset_path 'ico_comment.gif' %>) left 50% no-repeat;
 	padding-left: 16px;
 }
 
@@ -255,7 +255,7 @@ html .single .post {
 }
 
 .post cite, .post blockquote {
-	background: #f1f8d7 url('images/ico_quote.gif') 10px 10px no-repeat;
+	background: #f1f8d7 url(<%= asset_path 'ico_quote.gif' %>) 10px 10px no-repeat;
 	display: block;
 	font-size: .95em;
 	font-style: italic;
@@ -284,7 +284,7 @@ html .single .post {
 }
 
 .post ul li {
-	background: transparent url('images/ico_listentry.gif') left 9px no-repeat;
+	background: transparent url(<%= asset_path 'ico_listentry.gif' %>) left 9px no-repeat;
 	padding: 2px 2px 2px 12px;
 }
 
@@ -393,7 +393,7 @@ code {
 }
 
 #sidebar h4 {
-	background: #000e27 url('/images/sidebar-li-bg.gif') left top repeat-x;
+	background: #000e27 url(<%= asset_path 'sidebar-li-bg.gif' %>) left top repeat-x;
 	color: #fff;
 	display: block;
 	font-weight: bold;
@@ -414,7 +414,7 @@ code {
 	font-weight: normal;
 	padding: 2px 0 2px 0;
 	width: 200px;
-	background: transparent url('/images/ico_pg.gif') 10px .1em no-repeat;
+	background: transparent url(<%= asset_path 'ico_pg.gif' %>) 10px .1em no-repeat;
 	padding: 0 5px 0 25px;
 	width: 170px;
 }
@@ -454,7 +454,7 @@ code {
 	margin-left: 0;
 }
 #search {
-	background: #000e27 url('images/sidebar-li-bg.gif') left top repeat-x;
+	background: #000e27 url(<%= asset_path 'sidebar-li-bg.gif' %>) left top repeat-x;
 	margin-top: 20px;
 	padding: 15px 10px 20px 10px;
 	width: 180px;
@@ -480,7 +480,7 @@ code {
 }
 
 #search .mag {
-	background: transparent url('images/ico_magnifier.gif') left 2px no-repeat;
+	background: transparent url(<%= asset_path 'ico_magnifier.gif' %>) left 2px no-repeat;
 	border: 0 none;
 	height: 18px;
 	position: absolute;

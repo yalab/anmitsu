@@ -58,7 +58,7 @@
   <tr id="form_row">
     <td><%= f.text_field :content, :size => 40 %></td>
     <td><%= f.text_field :price, :size => 8 %></td>
-    <td><%= f.submit %></td>
+    <td><%= f.submit :id => "account_submit" %></td>
   </tr>
 
   <% @item.accounts.each do |account| -%>

@@ -5,15 +5,20 @@ require "action_mailer/railtie"
 require "active_resource/railtie"
 require "rails/test_unit/railtie"
 
-Bundler.require(:default, Rails.env) if defined?(Bundler)
+
+if defined?(Bundler)
+  Bundler.require(*Rails.groups(:assets => %w(development test)))
+end
+
 
 module Anmitsu
   Email = {:info => 'anmitsu64@gmail.com'}
   class Application < Rails::Application
     config.time_zone = 'Osaka'
     config.i18n.default_locale = :ja
-    config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
     config.encoding = "utf-8"
+    config.assets.enabled = true
+    config.assets.version = '1.0'
     config.filter_parameters += [:password, :password_confirmation]
     config.generators do |g|
       g.orm :mongoid
