@@ -10,12 +10,22 @@ gem 'kaminari'
 gem "jquery-rails"
 gem "migemo-lib", :require => 'migemo'
 
-group :development, :test do
+group :assets do
+  gem 'sass-rails',   '~> 3.1.4'
+  gem 'coffee-rails', '~> 3.1.1'
+  gem 'uglifier', '>= 1.0.3'
+end
+
+group :development do
+  gem 'rails3-generators'
+end
+
+group :test do
   gem 'shoulda'
   gem 'shoulda-activemodel'
   gem 'factory_girl'
   gem 'faker'
-  gem 'rails3-generators'
   gem 'mocha'
+  gem 'turn', :require => false
 end
 
