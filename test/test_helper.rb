@@ -1,8 +1,11 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+
 class ActiveSupport::TestCase
+  extend Mongoid::Matchers
 end
+
 class ActionController::TestCase
   include Devise::TestHelpers
   REG_SSL = %r|^https://|

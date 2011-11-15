@@ -23,6 +23,7 @@ end
 group :test do
   gem 'shoulda-context'
   gem 'shoulda-matchers'
+  gem 'mongoid-rspec'
   gem 'factory_girl'
   gem 'faker'
   gem 'mocha'
