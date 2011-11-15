@@ -28,6 +28,6 @@ group :test do
   gem 'faker'
   gem 'mocha'
   gem 'turn', :require => false
-  gem 'rcov'
+  gem 'simplecov', :require => false
 end
 
