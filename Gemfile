@@ -21,8 +21,8 @@ group :development do
 end
 
 group :test do
-  gem 'shoulda'
-  gem 'shoulda-activemodel'
+  gem 'shoulda-context'
+  gem 'shoulda-matchers'
   gem 'factory_girl'
   gem 'faker'
   gem 'mocha'
