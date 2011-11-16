@@ -13,6 +13,7 @@ class UserTest < ActiveSupport::TestCase
     should "generate information and bank_account" do
       assert_instance_of Information, @user.information
       assert_instance_of BankAccount, @user.bank_account
+      assert_equal true, @user.beginner?
     end
     should "mail subject encded iso-2022-jp" do
       assert_match /ISO-2022-JP/, @mail.header[:subject].encoded

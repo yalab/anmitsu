@@ -20,11 +20,22 @@ class ClientsControllerTest < ActionController::TestCase
       end
     end
     context "not known params" do
-      setup do
-        get :index, :format => :json, :item => {:client_name => @item.client_name.to_roma[0, 2].reverse}
+      context "query is alphabet" do
+        setup do
+          get :index, :format => :json, :item => {:client_name => @item.client_name.to_roma[0, 2].reverse}
+        end
+        should "fetch nothing" do
+          assert_equal 0, response.json.length
+        end
       end
-      should "fetch nothing" do
-        assert_equal 0, response.json.length
+
+      context "query is hiragana" do
+        setup do
+          get :index, :format => :json, :item => {:client_name => @item.client_name.to_kana[0, 2].reverse}
+        end
+        should "fetch nothing" do
+          assert_equal 0, response.json.length
+        end
       end
     end
   end

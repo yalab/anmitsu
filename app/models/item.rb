@@ -19,7 +19,7 @@ class Item
   validates :title, :presence => true
 
   scope :title_or_client, lambda{|title|
-    break scoped if title.blank?
+    return scoped if title.blank?
     regexp = Regexp.compile(Regexp.quote(title))
     any_of({:client_name => regexp}, {:title => regexp})
   }
