@@ -15,6 +15,7 @@ class Account
     hash[:item_tax] = number_with_delimiter(item.tax)
     hash[:price] = number_with_delimiter(price)
     hash[:unit] = I18n.t('number.currency.unit')
+    hash.stringify_keys!
     hash
   end
 end
