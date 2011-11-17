@@ -1,1 +1,0 @@
-$(function(){$("#preferences_link").qtip({content:t.first_step,style:"red",show:{ready:!0},position:{corner:{target:"topMiddle",tooltip:"bottomRight"}}})})
