@@ -10,12 +10,16 @@ class AccountsControllerTest < ActionController::TestCase
   end
 
   context "create action" do
-    should "success when model is valid" do
-      Account.any_instance.stubs(:valid?).returns(true)
-      price = 3000
-      post :create, :format => 'json', :item_id => @item.id, :account => {:price => price, :content => 'foobar'}
-      assert_response :success
-      assert_equal "3,000", ActiveSupport::JSON.decode(response.body)['price']
+    context "valid params" do
+      setup do
+        post :create, :format => 'json', :item_id => @item.id, :account => {:price => "3000", :content => 'foobar'}
+      end
+      should "success" do
+        assert_response :success
+      end
+      should "response is json" do
+        assert_equal Hash, response.json.class
+      end
     end
   end
 

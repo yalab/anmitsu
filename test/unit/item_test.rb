@@ -42,6 +42,9 @@ class ItemTest < ActiveSupport::TestCase
     should "add blank line not create scope" do
       assert_equal Hash.new, Item.client_name_like("").selector
     end
+    should "add present line create scope" do
+      assert_equal({:client_name=>/yal/}, Item.client_name_like("yal").selector)
+    end
   end
 
   context "state change" do
