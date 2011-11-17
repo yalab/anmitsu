@@ -12,6 +12,7 @@ Anmitsu::Application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
   # config.action_controller.asset_host = "http://assets.example.com"
+  config.assets.precompile += %w( items/form.js items/show.js jquery.qtip.min.js tutorial/1.js )
   config.i18n.fallbacks = true
   config.active_support.deprecation = :notify
   config.action_mailer.default_url_options = { :host => 'anmitsu.heroku.com' }
