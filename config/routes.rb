@@ -1,26 +1,20 @@
 Anmitsu::Application.routes.draw do
-  class ForceSSL
-    def self.matches?(request)
-      Rails.env != 'production' || request.ssl?
-    end
-  end
-
   get :tos, :to => "root#tos"
   get :contact, :to => "root#contact"
   root :to => "root#index"
-  scope :constraints => ForceSSL do
-    resources :clients, :only => [:index]
-    resources :information, :only => [:edit, :update]
-    resources :accounts, :only => [:show]
-    resources :items do
-      resources :accounts, :only => [:create, :destroy]
-    end
-    devise_for :users, :controllers => {:sessions => 'users/sessions', :confirmations => 'users/confirmations', :registrations => 'users'} do
-      namespace :users do
-        get :registered
-      end
+
+  resources :clients, :only => [:index]
+  resources :information, :only => [:edit, :update]
+  resources :accounts, :only => [:show]
+  resources :items do
+    resources :accounts, :only => [:create, :destroy]
+  end
+  devise_for :users, :controllers => {:sessions => 'users/sessions', :confirmations => 'users/confirmations', :registrations => 'users'} do
+    namespace :users do
+      get :registered
     end
   end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="siteholder">
-  <h1><%= link_to 'Anmitsu', root_url.as_ssl, :id => 'logo-link' %></h1>
+  <h1><%= link_to 'Anmitsu', root_url, :id => 'logo-link' %></h1>
   <h2>For your buisiness.</h2>
   <div id="siteWrap">
     <div class="wrapCapT">
@@ -28,8 +28,8 @@
             <li><%= link_to t('Listing items'), items_path %></li>
             <li><%= link_to t('Preferences'), edit_information_path(current_user.information), :id => 'preferences_link' %></li>
           <% else %>
-            <li><%= link_to t('Sign up'), new_user_registration_url.as_ssl, :id => 'sign-up-link' %></li>
-            <li><%= link_to t('Sign in'), new_user_session_url.as_ssl, :id => 'sign-in-link' %></li>
+            <li><%= link_to t('Sign up'), new_user_registration_url, :id => 'sign-up-link' %></li>
+            <li><%= link_to t('Sign in'), new_user_session_url, :id => 'sign-in-link' %></li>
           <% end %>
         </ul>
       </div>
