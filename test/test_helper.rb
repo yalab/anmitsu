@@ -13,7 +13,8 @@ end
 
 class ActionController::TestCase
   include Devise::TestHelpers
-  REG_SSL = %r|^https://|
+  setup{ @request.env['HTTPS'] = 'on' }
+
   def flash
     f = super
     [:notice, :alert].each do |k|
@@ -22,7 +23,9 @@ class ActionController::TestCase
     f
   end
 end
+
+class ActionDispatch::IntegrationTest
+  setup{ https! }
+end
 Mongoid.master.collections.select{ |c| c.name !~ /system\./ }.each { |c| c.drop }
 Dir.glob("#{Rails.root}/test/factories/*.rb"){|factory| require factory }
-
-

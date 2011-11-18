@@ -8,12 +8,6 @@ class RootControllerTest < ActionController::TestCase
     should "success" do
       assert_response :success
     end
-    should "menu link is https" do
-      ['logo-link', 'sign-in-link', 'sign-up-link'].each do |id|
-        href = find_tag(:tag => 'a', :attributes => {:id => id}).attributes['href']
-        assert_match REG_SSL, href
-      end
-    end
   end
 
   context "about application_controller" do
