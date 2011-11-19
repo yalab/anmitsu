@@ -5,10 +5,10 @@ gem 'bson_ext'
 gem 'mongoid'
 gem 'devise'
 gem 'stateflow'
-gem 'pdfkit'
 gem 'kaminari'
 gem "jquery-rails"
 gem "migemo-lib", :require => 'migemo'
+gem "prawn_rails"
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.5.rc.2'
@@ -30,4 +30,3 @@ group :test do
   gem 'turn', '~>0.8.3', :require => false
   gem 'simplecov', :require => false
 end
-

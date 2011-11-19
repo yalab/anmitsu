@@ -37,6 +37,7 @@ ja:
   Corporate name or trade name: &corporate_name_or_trade_name
                                 法人名、屋号
   delivery: 請求
+  Dear: "%{name} 御中"
   Description: &description
                説明
   Destroy: 削除
