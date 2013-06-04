@@ -1,21 +1,9 @@
-class Item
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class Item < ActiveRecord::Base
   include Stateflow
   paginates_per 10
   TAX = 5
-  field :title,         :type => String
-  field :description,   :type => String
-  field :note,          :type => String
-  field :client_name,   :type => String
-  field :state,         :type => String
-  field :estimated_at,  :type => Time, :default => Time.now
-  field :ordered_at,    :type => Time
-  field :deliveried_at, :type => Time
-  field :receipted_at,  :type => Time
-  field :created_at,    :type => Time
-  referenced_in :user
-  embeds_many :accounts
+#  belongs_to :user
+#  has_many :accounts
   validates :title, :presence => true
 
   scope :title_or_client, lambda{|title|

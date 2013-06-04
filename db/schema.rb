@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604165109) do
+ActiveRecord::Schema.define(:version => 20130604171259) do
 
   create_table "bank_accounts", :force => true do |t|
     t.string   "bank_name"
@@ -39,5 +39,22 @@ ActiveRecord::Schema.define(:version => 20130604165109) do
   end
 
   add_index "information", ["user_id"], :name => "index_information_on_user_id"
+
+  create_table "items", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "note"
+    t.string   "client_name"
+    t.string   "state"
+    t.datetime "estimated_at"
+    t.datetime "ordered_at"
+    t.datetime "deliveried_at"
+    t.datetime "receipted_at"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["user_id"], :name => "index_items_on_user_id"
 
 end
