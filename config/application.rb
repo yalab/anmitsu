@@ -17,7 +17,7 @@ module Anmitsu
     config.assets.version = '1.0'
     config.filter_parameters += [:password, :password_confirmation]
     config.generators do |g|
-      g.orm :mongoid
+      g.orm :active_record
       g.test_framework  :shoulda, :fixture_replacement => :factory_girl
       g.fallbacks[:shoulda] = :test_unit
     end
