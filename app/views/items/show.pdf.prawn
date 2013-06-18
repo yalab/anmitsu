@@ -69,23 +69,21 @@ prawn_document(:filename=> @item.title + '.pdf') do |pdf|
     move_down(20)
 
     header = [t('Content'), t('Price')]
-    rows = item.accounts.map{|i| [i.content, number_to_currency(i.price)] }
-    rows << [t('Tax'), number_to_currency(item.total_with_tax)]
+    rows = item.accounts.map{|i| [i.content, number_to_currency(i.price, negative_format: "-%n%u")] }
+    rows << [t('Tax'), number_to_currency(item.tax)]
     rows << [t('Total'), number_to_currency(item.total_with_tax)]
 
     width = @bounding_box.width
     padding = 2
     w = 420
-    border :padding => padding do
-      table([header, *rows], :header => true, :row_colors => ['FFFFFF', 'F8F8F8'], :column_widths => [w, width - w - (padding * 2)]) do
-        cells.style :borders => []
-        row(0).style :background_color => '3333AA', :text_color => 'FFFFFF', :align => :center
-        columns(1).style :align => :right, :borders => [:left], :border_colors => ['000000', 'FFFFFF']
-        row(0).columns(1).style :align => :center
-        footer = row(rows.length)
-        footer.style :borders => [:top], :background_color => 'FFFFFF'
-        footer.columns(0).style :align => :center
-      end
+    table([header, *rows], :header => true, :row_colors => ['FFFFFF', 'F8F8F8'], :column_widths => [w, width - w - (padding * 2)]) do
+      cells.style :borders => [:top, :right, :left, :bottom]
+      row(0).style :background_color => '3333AA', :text_color => 'FFFFFF', :align => :center
+      columns(1).style :align => :right, :borders => [:left, :bottom, :right], :border_colors => ['000000', '000000', '000000', 'FFFFFF']
+      row(0).columns(1).style :align => :center
+      footer = row(rows.length)
+      footer.style :background_color => 'FFFFFF', :borders => [:top, :bottom, :right, :left]
+      footer.columns(0).style :align => :center
     end
 
     move_down 20
