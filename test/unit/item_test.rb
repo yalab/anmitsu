@@ -21,29 +21,32 @@ class ItemTest < ActiveSupport::TestCase
 
 
   context ".title_or_client" do
-    should "blank line not create scope" do
-#      assert_equal Hash.new, Item.title_or_client("").selector
+    setup do
+      FactoryGirl.create(:item, client_name: 'yalab')
     end
+
+    should "blank line not create scope" do
+      expects = Item.all
+      assert_equal expects, Item.title_or_client("").all
+    end
+
     should "present line create scope" do
-#      assert_equal({"$or"=>[{:client_name=>/yalab/}, {:title=>/yalab/}]}, Item.title_or_client("yalab").selector)
+      str = "yalab"
+      expects = Item.all.select{|item| item.title =~ /#{str}/ || item.client_name =~ /#{str}/}
+      assert_equal expects, Item.title_or_client(str).all
     end
   end
 
   context ".state_is" do
     should "add blank line not create scope" do
-#      assert_equal Hash.new, Item.state_is("").selector
+      expects = Item.all
+      assert_equal expects, Item.state_is("")
     end
-    should "add present line create scope" do
- #     assert_equal({:state=>"estimate"}, Item.state_is("estimate").selector)
-    end
-  end
 
-  context ".client_name_like" do
-    should "add blank line not create scope" do
-#      assert_equal Hash.new, Item.client_name_like("").selector
-    end
     should "add present line create scope" do
- #     assert_equal({:client_name=>/yal/}, Item.client_name_like("yal").selector)
+      state = 'estimate'
+      expects = Item.all.select{|item| item.state == state }
+      assert_equal expects, Item.state_is("estimate").all
     end
   end
 

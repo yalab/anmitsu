@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604171259) do
+ActiveRecord::Schema.define(:version => 20130618043447) do
+
+  create_table "accounts", :force => true do |t|
+    t.string   "content"
+    t.integer  "price"
+    t.string   "note"
+    t.integer  "item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "accounts", ["item_id"], :name => "index_accounts_on_item_id"
 
   create_table "bank_accounts", :force => true do |t|
     t.string   "bank_name"

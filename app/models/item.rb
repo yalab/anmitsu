@@ -2,22 +2,18 @@ class Item < ActiveRecord::Base
   include Stateflow
   paginates_per 10
   TAX = 5
-#  belongs_to :user
-#  has_many :accounts
+  belongs_to :user
+  has_many :accounts
   validates :title, :presence => true
+  before_create :set_default_values
 
   scope :title_or_client, lambda{|title|
     return scoped if title.blank?
-    regexp = Regexp.compile(Regexp.quote(title))
-    any_of({:client_name => regexp}, {:title => regexp})
+    where("client_name like ? OR title like ?", "%#{title}%", "%#{title}%")
   }
 
   scope :state_is, lambda{|state|
     (state.blank?) ? scoped : where(:state => state)
-  }
-
-  scope :client_name_like, lambda{|name|
-    (name.blank?) ? scoped : where(:client_name => Regexp.compile(Regexp.quote(name)))
   }
 
   stateflow do
@@ -46,5 +42,10 @@ class Item < ActiveRecord::Base
 
   def total_with_tax
     @totel ||= tax + total
+  end
+
+  private
+  def set_default_values
+    self.estimated_at ||= Time.now
   end
 end

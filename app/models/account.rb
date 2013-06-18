@@ -1,12 +1,12 @@
-class Account
+class Account < ActiveRecord::Base
   include ActionView::Helpers::NumberHelper
-  include Mongoid::Document
-  field :content, :type => String
-  field :price,   :type => Integer
+#  include Mongoid::Document
+#  field :content, :type => String
+#  field :price,   :type => Integer
   validates :content, :presence => true
   validates :price,   :presence => true, :numericality => {:only_integer => true}
-  field(:note,    :type => String)  || nil
-  embedded_in :item, :inverse_of => :accounts
+#  field(:note,    :type => String)  || nil
+#  embedded_in :item, :inverse_of => :accounts
 
   def serializable_hash(*args)
     hash = super
