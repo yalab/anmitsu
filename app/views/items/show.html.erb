@@ -38,10 +38,18 @@
   <div style="float: left;"><%= link_to "[#{t("Destroy")}]", @item, :method => :delete, :confirm => t('Are you sure you want to delete this item?') %></div>
   <div style="float: right; text-align: right;">
     <%= link_to "[#{t("Edit base info")}]", edit_item_path(@item) %>&nbsp;
+    <%= link_to "[CSV #{t('Upload')}]", 'javascript:void(0)', id: 'js-csv_upload_button'%>
     <% if @item.estimate? || @item.delivery? %>
       <%= link_to "[#{t('PDF download')}]", item_path(@item, :format => 'pdf') %><% end %>
   </div>
   <div style="clear: both;"></div>
+</div>
+
+<div id="js-upload_form" style="display:none;">
+  <%= form_for([@item, @item.accounts.new], multipart: true, format: 'csv') do |f| %>
+    <%= f.file_field :file %>
+    <%= f.submit t('Upload') %>
+  <% end %>
 </div>
 
 <%= form_for([@item, @item.accounts.new]) do |f| %>

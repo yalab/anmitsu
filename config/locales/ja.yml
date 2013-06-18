@@ -114,6 +114,7 @@ ja:
          タイトル
   Total: 合計
   Update success: 設定を更新しました
+  Upload: 'アップロード'
   date:
     formats:
       default: "%Y年%m月%d日"

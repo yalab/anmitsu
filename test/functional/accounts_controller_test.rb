@@ -41,4 +41,17 @@ class AccountsControllerTest < ActionController::TestCase
       end
     end
   end
+
+  context "on POST :create_all" do
+    setup do
+      @count = @item.accounts.count
+      file = fixture_file_upload(Rails.root.join(*%w|test fixtures accounts.csv|))
+      post :create_all, item_id: @item.to_param, format: 'csv', account: {file: file}
+    end
+
+    should "create accounts" do
+      assert_equal @count + 2, @item.reload.accounts.count
+      assert_redirected_to @item
+    end
+  end
 end

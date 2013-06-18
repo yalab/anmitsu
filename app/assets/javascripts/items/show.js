@@ -1,4 +1,7 @@
 jQuery(function($){
+  $('#js-csv_upload_button').on('click', function(){
+    $("#js-upload_form").fadeIn('slow');
+  })
   var post_success = function(account){
     $(":text").val('');
     var tr = $(document.createElement('tr'));
