@@ -9,7 +9,7 @@ class AccountTest < ActiveSupport::TestCase
   should validate_numericality_of(:price)
   context "#serializable_hash" do
     should "insert Item#total and Item#total_with_tax" do
-      account = @item.accounts.create(:title => 'foobar', :price => 100)
+      account = @item.accounts.create(:content => 'foobar', :price => 100)
       serialized = account.serializable_hash
       assert_equal "#{@account.price + account.price}", serialized['item_total']
       with_tax = (@account.price + account.price) * 1.05

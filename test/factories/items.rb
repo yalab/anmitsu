@@ -6,6 +6,6 @@ FactoryGirl.define do
     note "note"
     client_name "よしだあつし"
 #    association :user, :factory => :user
-#    after_build{|e| FactoryGirl.create(:account, :item => e) }
+    after_build{|e| FactoryGirl.create(:account, :item => e) }
   end
 end
