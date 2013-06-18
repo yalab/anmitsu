@@ -1,4 +1,6 @@
 Anmitsu::Application.routes.draw do
+  devise_for :users
+
   get :tos, :to => "root#tos"
   get :contact, :to => "root#contact"
   root :to => "root#index"
