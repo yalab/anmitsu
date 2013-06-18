@@ -1,2 +1,2 @@
-Stateflow.persistence = :mongoid
+Stateflow.persistence = :active_record
 

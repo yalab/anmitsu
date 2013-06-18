@@ -277,7 +277,6 @@ ja:
 
       full_messages:
         format: "%{message}"
-  mongoid: *activemodel
   helpers:
     submit:
       create: "登録"
