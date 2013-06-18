@@ -28,6 +28,5 @@ group :test do
   gem 'factory_girl'
   gem 'faker'
   gem 'mocha'
-  gem 'turn', '~>0.8.3', :require => false
   gem 'simplecov', :require => false
 end

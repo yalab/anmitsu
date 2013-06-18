@@ -30,7 +30,6 @@ GEM
       activesupport (= 3.1.2)
     activesupport (3.1.2)
       multi_json (~> 1.0)
-    ansi (1.4.1)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
     bsearch (1.5.0)
@@ -157,8 +156,6 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     ttfunk (1.0.3)
-    turn (0.8.3)
-      ansi
     tzinfo (0.3.31)
     uglifier (1.0.4)
       execjs (>= 0.3.0)
@@ -190,5 +187,4 @@ DEPENDENCIES
   simplecov
   sqlite3
   stateflow
-  turn (~> 0.8.3)
   uglifier (>= 1.0.3)
