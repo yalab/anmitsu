@@ -46,7 +46,7 @@
 </div>
 
 <div id="js-upload_form" style="display:none;">
-  <%= form_for([@item, @item.accounts.new], multipart: true, format: 'csv') do |f| %>
+  <%= form_for([@item, @item.accounts.new], multipart: true, format: 'csv', html: {id: 'accounts_create_all'}) do |f| %>
     <%= f.file_field :file %>
     <%= f.submit t('Upload') %>
   <% end %>

@@ -43,11 +43,11 @@ class AccountsControllerTest < ActionController::TestCase
     end
   end
 
-  context "on POST :create_all" do
+  context "on POST :create as csv" do
     setup do
       @count = @item.accounts.count
       file = fixture_file_upload('accounts.csv')
-      post :create_all, item_id: @item.to_param, format: 'csv', account: {file: file}
+      post :create, item_id: @item.to_param, format: 'csv', account: {file: file}
     end
 
     should "create accounts" do

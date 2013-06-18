@@ -9,7 +9,6 @@ Anmitsu::Application.routes.draw do
   resources :information, :only => [:edit, :update]
   resources :accounts, :only => [:show]
   resources :items do
-    post :accounts, constraints: {format: /csv/}, to: 'accounts#create_all'
     resources :accounts, :only => [:create, :destroy]
   end
   devise_for :users, :controllers => {:sessions => 'users/sessions', :confirmations => 'users/confirmations', :registrations => 'users'} do

@@ -277,6 +277,7 @@ ja:
 
       full_messages:
         format: "%{message}"
+  activerecord: *activemodel
   helpers:
     submit:
       create: "登録"

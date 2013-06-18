@@ -3,6 +3,7 @@ class AccountsController < ApplicationController
   respond_to :json
 
   def create
+    return create_all if params[:format] == 'csv'
     @account = item.accounts.build(params[:account])
     @account.save
     respond_with(@account)

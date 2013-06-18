@@ -2,7 +2,8 @@ jQuery(function($){
   $('#js-csv_upload_button').on('click', function(){
     $("#js-upload_form").fadeIn('slow');
   })
-  var post_success = function(account){
+  var post_success = function(object){
+    var account = object.account
     $(":text").val('');
     var tr = $(document.createElement('tr'));
     tr.attr('id', 'account_' + account._id);
@@ -62,7 +63,8 @@ jQuery(function($){
            });
     return false;
   });
-  var delete_success = function(data, account){
+  var delete_success = function(data, object){
+    var account = object.account;
         $("#tax").html(account['item_tax'] + account['unit']);
     $(".total_with_tax").html(account['item_total_with_tax'] + account['unit']);
     var id = this.href.split('/').pop();
