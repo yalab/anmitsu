@@ -34,8 +34,9 @@ class AccountsControllerTest < ActionController::TestCase
     context "without not embeded id" do
       should "not destroy model and response is failure" do
         assert_difference "@item.accounts.length", 0 do
-          assert_raise(Mongoid::Errors::DocumentNotFound){
-            delete :destroy, :id => 1, :format => 'json', :item_id => @item.id
+          id = Account.maximum(:id) + 1
+          assert_raise(ActiveRecord::RecordNotFound){
+            delete :destroy, :id => id, :format => 'json', :item_id => @item.id
           }
         end
       end

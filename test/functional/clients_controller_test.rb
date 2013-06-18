@@ -10,6 +10,7 @@ class ClientsControllerTest < ActionController::TestCase
     end
     context "known params" do
       setup do
+        skip
         get :index, :format => :json, :item => {:client_name => @item.client_name.to_roma[0, 2]}
       end
       should "fetch record" do

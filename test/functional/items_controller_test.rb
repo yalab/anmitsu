@@ -164,7 +164,7 @@ class ItemsControllerTest < ActionController::TestCase
         @new_item = new_user.items.create(:title => 'foobar')
       end
       should "ignore update" do
-        assert_raise(Mongoid::Errors::DocumentNotFound){
+        assert_raise(ActiveRecord::RecordNotFound){
           put :update, :id => @new_item.to_param, :item => @item.attributes
         }
       end

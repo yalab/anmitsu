@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
 
   def index
     @item = Item.new(params[:item])
-    @items = current_user.items.title_or_client(@item.title).state_is(@item.state).order_by(:created_at.desc).page(params[:page])
+    @items = current_user.items.title_or_client(@item.title).state_is(@item.state).order("created_at DESC").page(params[:page])
     respond_with(@items)
   end
 
